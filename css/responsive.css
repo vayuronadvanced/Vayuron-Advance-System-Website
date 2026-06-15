@@ -1,0 +1,58 @@
+/* ============================================================
+   responsive.css — Vayuron Advanced Systems
+   Breakpoint overrides: tablet (≤1024px) and mobile (≤768px / ≤540px)
+   ============================================================ */
+
+/* ── Tablet ────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  .cap-grid   { grid-template-columns: repeat(2, 1fr); }
+  .ind-grid   { grid-template-columns: repeat(2, 1fr); }
+  .footer-main { grid-template-columns: 1fr 1fr; }
+
+  .mission-inner { grid-template-columns: 1fr; gap: 48px; }
+  .mission-ring  { display: none; }
+
+}
+
+/* ── Mobile ────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  :root { --section-px: 24px; }
+
+  /* Navbar */
+  .nav-links    { display: none; }
+  .nav-cta      { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* Hero */
+  .hero-stats   { display: none; }
+
+  .hc.tr, .hc.br { right: 24px; }
+  .hc.tl, .hc.bl { left: 24px; }
+  .hc.tl, .hc.tr { top: 80px;  }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+  .form-row     { grid-template-columns: 1fr; }
+
+  /* Capabilities header */
+  .cap-header { flex-direction: column; align-items: flex-start; }
+
+  /* Footer */
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; }
+
+}
+
+/* ── Small mobile ──────────────────────────────────── */
+@media (max-width: 540px) {
+
+  .hero-h1  { font-size: 52px; }
+
+  .cap-grid    { grid-template-columns: 1fr; }
+  .ind-grid    { grid-template-columns: 1fr; }
+  .footer-main { grid-template-columns: 1fr; }
+
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+}

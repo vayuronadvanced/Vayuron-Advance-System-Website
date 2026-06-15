@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.vayuron.in/sitemap.xml
+
+# Disallow admin/api internals if added later
+# Disallow: /api/
+# Disallow: /config/

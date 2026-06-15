@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vayuron Advanced Systems — Engineering Indigenous Innovation</title>
+  <meta name="description" content="Vayuron Advanced Systems builds indigenous UAVs, AI-powered software, and advanced engineering solutions for defence, industry, and critical infrastructure." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vayuron Advanced Systems — Engineering Indigenous Innovation" />
+  <meta property="og:description" content="Indigenous UAVs, AI, software, and advanced engineering for defence, government, and industry." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/images/company/og-cover.jpg" />
+
+  <link rel="icon" href="/assets/logos/favicon.ico" />
+  <link rel="canonical" href="/index.html" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/ticker.css" />
+  <link rel="stylesheet" href="css/mission.css" />
+  <link rel="stylesheet" href="css/capabilities.css" />
+  <link rel="stylesheet" href="css/industries.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/page-header.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Custom cursor dot -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR (injected by js/navbar.js)
+       ═══════════════════════════════════════ -->
+  <div id="navbar-root"></div>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════ -->
+  <section id="hero" aria-label="Hero">
+    <!-- Background video (req. 10) — drop an MP4 in assets/videos/hero/ and uncomment -->
+    <!--
+    <video class="hero-video" autoplay muted loop playsinline poster="/assets/images/hero/hero-poster.jpg" aria-hidden="true">
+      <source src="/assets/videos/hero/hero-background.mp4" type="video/mp4" />
+    </video>
+    -->
+    <div class="hero-bg"      aria-hidden="true"></div>
+    <div class="hero-grid"    aria-hidden="true"></div>
+    <div class="hero-scanline" aria-hidden="true"></div>
+
+    <!-- Corner brackets -->
+    <div class="hc tl" aria-hidden="true"></div>
+    <div class="hc tr" aria-hidden="true"></div>
+    <div class="hc bl" aria-hidden="true"></div>
+    <div class="hc br" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="badge-dot" aria-hidden="true"></div>
+        <span class="badge-text">Indigenous Technology · Advanced Systems · Mission Ready</span>
+      </div>
+
+      <!-- Tagline updated: "Engineering Indigenous Innovation" (req. 1) -->
+      <h1 class="hero-h1">
+        VAYURON<br>
+        <span class="hl">ADVANCED</span><br>
+        SYSTEMS
+      </h1>
+
+      <p class="hero-sub">
+        For Defence, Industry, and Critical Infrastructure. Building next-generation UAVs,
+        AI-powered software, and precision engineering solutions for mission-critical operations.
+      </p>
+
+      <div class="hero-actions">
+        <!-- "Explore Solutions" -> Products page (req. 2 & 3) -->
+        <button class="btn-primary" onclick="window.location.href='/pages/products.html'">
+          Explore Products
+        </button>
+        <button class="btn-outline" onclick="window.location.href='/pages/contact.html'">
+          Contact Us
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats sidebar -->
+    <div class="hero-stats" aria-label="Key statistics">
+      <div class="stat-item">
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Core Domains</div>
+      </div>
+      <div class="stat-div" aria-hidden="true"></div>
+      <div class="stat-item">
+        <div class="stat-num">8</div>
+        <div class="stat-label">Sectors Served</div>
+      </div>
+      <div class="stat-div" aria-hidden="true"></div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Indigenous</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       TICKER STRIP
+       ═══════════════════════════════════════ -->
+  <div id="ticker" aria-label="Technology capabilities ticker" role="marquee">
+    <div class="ticker-track">
+      <span class="t-item">Fixed Wing UAV</span>       <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">VTOL Systems</span>          <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Computer Vision</span>       <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Object Detection</span>      <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Mission Planning</span>      <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Composite Manufacturing</span><div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Autonomous AI</span>         <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Cloud Infrastructure</span>  <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Aerospace Structures</span>  <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Operational Dashboards</span><div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Payload Integration</span>   <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Data Analytics</span>        <div class="t-sep" aria-hidden="true"></div>
+      <!-- Duplicate for seamless infinite loop -->
+      <span class="t-item">Fixed Wing UAV</span>       <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">VTOL Systems</span>          <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Computer Vision</span>       <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Object Detection</span>      <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Mission Planning</span>      <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Composite Manufacturing</span><div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Autonomous AI</span>         <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Cloud Infrastructure</span>  <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Aerospace Structures</span>  <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Operational Dashboards</span><div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Payload Integration</span>   <div class="t-sep" aria-hidden="true"></div>
+      <span class="t-item">Data Analytics</span>        <div class="t-sep" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       MISSION
+       ═══════════════════════════════════════ -->
+  <section id="mission" aria-label="Our Mission">
+    <div class="mission-ring" aria-hidden="true"></div>
+    <div class="mission-inner">
+      <div>
+        <div class="section-label reveal">Our Mission</div>
+        <h2 class="stitle reveal d1">BUILT FOR<br>THE NATION.</h2>
+      </div>
+      <blockquote class="mission-quote reveal d2">
+        To build <strong>reliable, intelligent, and indigenous technologies</strong> that
+        strengthen national capability, industrial efficiency, and operational excellence —
+        at the intersection of autonomy, artificial intelligence, and precision engineering.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CAPABILITIES PREVIEW (teaser only —
+       full detail lives on pages/technology.html
+       and pages/products.html, req. 3/4/5)
+       ═══════════════════════════════════════ -->
+  <section id="capabilities" aria-label="Primary Capabilities">
+    <div class="section-wrap">
+      <div class="cap-header">
+        <div>
+          <div class="section-label reveal">Primary Capabilities</div>
+          <h2 class="stitle reveal d1">WHAT WE<br>BUILD</h2>
+        </div>
+        <p class="cap-header-right reveal d2">
+          Four integrated capability domains — engineered for defence, government, and
+          industrial environments where failure is not an option.
+        </p>
+      </div>
+
+      <div class="cap-grid reveal d2">
+
+        <!-- UAV Systems -->
+        <a class="cap-card" href="/products/uav-systems.html">
+          <div class="cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 18 L16 7 L29 18"/>
+              <path d="M7 18 L7 27 L16 23 L25 27 L25 18"/>
+              <circle cx="16" cy="17" r="3"/>
+              <line x1="1"  y1="20" x2="7"  y2="18"/>
+              <line x1="31" y1="20" x2="25" y2="18"/>
+            </svg>
+          </div>
+          <h3 class="cap-name">UAV Systems</h3>
+          <p class="cap-desc">Indigenous unmanned aerial systems engineered for surveillance, reconnaissance, and payload delivery in contested environments.</p>
+          <ul class="cap-list">
+            <li>Fixed Wing Drones</li>
+            <li>VTOL Systems</li>
+            <li>Payload Integration</li>
+          </ul>
+        </a>
+
+        <!-- Artificial Intelligence -->
+        <a class="cap-card" href="/products/artificial-intelligence.html">
+          <div class="cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="6" width="20" height="20" rx="2"/>
+              <circle cx="16" cy="16" r="4"/>
+              <line x1="16" y1="6"  x2="16" y2="12"/>
+              <line x1="16" y1="20" x2="16" y2="26"/>
+              <line x1="6"  y1="16" x2="12" y2="16"/>
+              <line x1="20" y1="16" x2="26" y2="16"/>
+              <line x1="8.5"  y1="8.5"  x2="12.5" y2="12.5"/>
+              <line x1="19.5" y1="19.5" x2="23.5" y2="23.5"/>
+              <line x1="23.5" y1="8.5"  x2="19.5" y2="12.5"/>
+              <line x1="8.5"  y1="23.5" x2="12.5" y2="19.5"/>
+            </svg>
+          </div>
+          <h3 class="cap-name">Artificial Intelligence</h3>
+          <p class="cap-desc">Machine perception and decision intelligence systems built for real-time operational environments and autonomous missions.</p>
+          <ul class="cap-list">
+            <li>Computer Vision</li>
+            <li>Object Detection</li>
+            <li>Autonomous Decision Systems</li>
+          </ul>
+        </a>
+
+        <!-- Software Systems -->
+        <a class="cap-card" href="/products/software-systems.html">
+          <div class="cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="6" width="28" height="20" rx="2"/>
+              <polyline points="9,13 6,16 9,19"/>
+              <polyline points="23,13 26,16 23,19"/>
+              <line x1="14" y1="21" x2="18" y2="11"/>
+            </svg>
+          </div>
+          <h3 class="cap-name">Software Systems</h3>
+          <p class="cap-desc">Secure, scalable operational software platforms for defence and critical infrastructure command and management.</p>
+          <ul class="cap-list">
+            <li>Operational Dashboards</li>
+            <li>Cloud Infrastructure</li>
+            <li>Data Platforms</li>
+          </ul>
+        </a>
+
+        <!-- Advanced Engineering -->
+        <a class="cap-card" href="/products/advanced-engineering.html">
+          <div class="cap-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="16,3 29,10 29,22 16,29 3,22 3,10"/>
+              <line x1="16" y1="3"  x2="16" y2="29"/>
+              <line x1="3"  y1="10" x2="29" y2="10"/>
+              <line x1="3"  y1="22" x2="29" y2="22"/>
+              <line x1="3"  y1="10" x2="16" y2="16"/>
+              <line x1="29" y1="10" x2="16" y2="16"/>
+              <line x1="3"  y1="22" x2="16" y2="16"/>
+              <line x1="29" y1="22" x2="16" y2="16"/>
+            </svg>
+          </div>
+          <h3 class="cap-name">Advanced Engineering</h3>
+          <p class="cap-desc">Precision aerospace structural design, composite manufacturing, and product development from concept to deployment.</p>
+          <ul class="cap-list">
+            <li>CAD Design</li>
+            <li>Aerospace Structures</li>
+            <li>Product Development</li>
+          </ul>
+        </a>
+
+      </div><!-- /.cap-grid -->
+
+      <div class="reveal d3" style="text-align:center; margin-top:48px;">
+        <a class="btn-outline" href="/pages/technology.html">View Full Technology Portfolio →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTORS PREVIEW (each card -> dedicated
+       page, req. 8)
+       ═══════════════════════════════════════ -->
+  <section id="industries" aria-label="Sectors Served">
+    <div class="section-wrap">
+      <div class="ind-head">
+        <div class="section-label reveal">Sectors Served</div>
+        <h2 class="stitle reveal d1">SECTORS WE<br>OPERATE IN</h2>
+      </div>
+
+      <div class="ind-grid">
+
+        <a class="ind-card reveal" href="/sectors/defence-security.html">
+          <span class="ind-num" aria-hidden="true">01</span>
+          <div class="ind-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="12,2 22,7 22,17 12,22 2,17 2,7"/>
+              <line x1="12" y1="2"  x2="12" y2="22"/>
+              <line x1="2"  y1="7"  x2="22" y2="7"/>
+              <line x1="2"  y1="17" x2="22" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="ind-name">Defence &amp; Security</h3>
+          <p class="ind-desc">Surveillance, border protection, and national security operations</p>
+        </a>
+
+        <a class="ind-card reveal d1" href="/sectors/smart-cities.html">
+          <span class="ind-num" aria-hidden="true">02</span>
+          <div class="ind-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2"  y="12" width="4" height="10"/>
+              <rect x="7"  y="8"  width="4" height="14"/>
+              <rect x="13" y="5"  width="4" height="17"/>
+              <rect x="19" y="2"  width="3" height="20"/>
+            </svg>
+          </div>
+          <h3 class="ind-name">Smart Cities</h3>
+          <p class="ind-desc">Urban aerial intelligence and infrastructure optimization</p>
+        </a>
+
+        <a class="ind-card reveal d2" href="/sectors/municipal-operations.html">
+          <span class="ind-num" aria-hidden="true">03</span>
+          <div class="ind-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="2"  x2="12" y2="22"/>
+              <line x1="2"  y1="12" x2="22" y2="12"/>
+              <path d="M4.9 6 Q12 10 19.1 6"/>
+              <path d="M4.9 18 Q12 14 19.1 18"/>
+            </svg>
+          </div>
+          <h3 class="ind-name">Municipal Operations</h3>
+          <p class="ind-desc">Local government asset monitoring and public services delivery</p>
+        </a>
+
+        <a class="ind-card reveal d3" href="/sectors/infrastructure-monitoring.html">
+          <span class="ind-num" aria-hidden="true">04</span>
+          <div class="ind-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <line x1="3" y1="21" x2="21" y2="21"/>
+              <path d="M5 21 L5 11 L12 4 L19 11 L19 21"/>
+              <rect x="10" y="16" width="4" height="5"/>
+            </svg>
+          </div>
+          <h3 class="ind-name">Infrastructure Monitoring</h3>
+          <p class="ind-desc">Critical asset inspection and structural health assessment</p>
+        </a>
+
+        <a class="ind-card reveal" href="/sectors/agriculture.html">
+          <span class="ind-num" aria-hidden="true">05</span>
+          <div class="ind-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2 C7 2 3 6.5 3 11 C3 17 12 22 12 22 C12 22 21 17 21 11 C21 6.5 17 2 12 2Z"/>
+              <circle cx="12" cy="11" r="3"/>
+            </svg>
+          </div>
+          <h3 class="ind-name">Agriculture</h3>
+          <p class="ind-desc">Precision crop monitoring, spraying, and field analytics</p>
+        </a>
+
+        <a class="ind-card reveal d1" href="/sectors/disaster-management.html">
+          <span class="ind-num" aria-hidden="true">06</span>
+          <div class="ind-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2 L2 20 L22 20 Z"/>
+              <line x1="12" y1="10" x2="12" y2="15"/>
+              <circle cx="12" cy="17" r="1"/>
+            </svg>
+          </div>
+          <h3 class="ind-name">Disaster Management</h3>
+          <p class="ind-desc">Rapid response, search &amp; rescue, and damage assessment</p>
+        </a>
+
+        <a class="ind-card reveal d2" href="/sectors/environmental-monitoring.html">
+          <span class="ind-num" aria-hidden="true">07</span>
+          <div class="ind-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="4"/>
+              <line x1="12" y1="2"  x2="12" y2="5"/>
+              <line x1="12" y1="19" x2="12" y2="22"/>
+              <line x1="2"  y1="12" x2="5"  y2="12"/>
+              <line x1="19" y1="12" x2="22" y2="12"/>
+              <line x1="4.9"  y1="4.9"  x2="7.1"  y2="7.1"/>
+              <line x1="16.9" y1="16.9" x2="19.1" y2="19.1"/>
+              <line x1="19.1" y1="4.9"  x2="16.9" y2="7.1"/>
+              <line x1="7.1"  y1="16.9" x2="4.9"  y2="19.1"/>
+            </svg>
+          </div>
+          <h3 class="ind-name">Environmental Monitoring</h3>
+          <p class="ind-desc">Ecological surveillance, pollution tracking, and resource mapping</p>
+        </a>
+
+        <a class="ind-card reveal d3" href="/sectors/industrial-inspection.html">
+          <span class="ind-num" aria-hidden="true">08</span>
+          <div class="ind-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="7" width="20" height="14" rx="1"/>
+              <path d="M8 7 L8 4 L16 4 L16 7"/>
+              <line x1="12" y1="11" x2="12" y2="17"/>
+              <line x1="9"  y1="14" x2="15" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="ind-name">Industrial Inspection</h3>
+          <p class="ind-desc">Plant, pipeline, and facility automated inspection systems</p>
+        </a>
+
+      </div><!-- /.ind-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA — replaces full Contact section
+       (Contact now lives on pages/contact.html, req. 6)
+       ═══════════════════════════════════════ -->
+  <section class="cta-banner" aria-label="Call to action">
+    <div class="section-label reveal" style="justify-content:center">Get In Touch</div>
+    <h2 class="stitle reveal d1">LET'S BUILD<br>THE <span class="hl" style="color:var(--cyan)">FUTURE</span> TOGETHER.</h2>
+    <p class="reveal d2">
+      Vayuron Advanced Systems works with defence organisations, government agencies,
+      and industrial operators to deliver mission-ready autonomous technology.
+    </p>
+    <div class="cta-actions reveal d3">
+      <a class="btn-primary" href="/pages/contact.html">Contact Us</a>
+      <a class="btn-outline" href="/pages/about.html">About Vayuron</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER (injected by js/footer.js)
+       ═══════════════════════════════════════ -->
+  <div id="footer-root"></div>
+
+  <!-- JavaScript -->
+  <script src="js/utils.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/nav-active.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/scroll-reveal.js"></script>
+  <script src="js/smooth-scroll.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

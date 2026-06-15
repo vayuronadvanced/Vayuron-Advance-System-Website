@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.vayuron.in/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.vayuron.in/pages/products.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.vayuron.in/pages/technology.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.vayuron.in/pages/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.vayuron.in/pages/more-info.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.vayuron.in/pages/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.vayuron.in/pages/careers.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Sector pages -->
+  <url><loc>https://www.vayuron.in/sectors/defence-security.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vayuron.in/sectors/smart-cities.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.vayuron.in/sectors/municipal-operations.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.vayuron.in/sectors/infrastructure-monitoring.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.vayuron.in/sectors/agriculture.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.vayuron.in/sectors/disaster-management.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.vayuron.in/sectors/environmental-monitoring.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.vayuron.in/sectors/industrial-inspection.html</loc><priority>0.6</priority></url>
+
+  <!-- Product pages -->
+  <url><loc>https://www.vayuron.in/products/uav-systems.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.vayuron.in/products/artificial-intelligence.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.vayuron.in/products/software-systems.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.vayuron.in/products/advanced-engineering.html</loc><priority>0.8</priority></url>
+
+  <!--
+    TODO: add remaining pages as they are built —
+    /pages/downloads.html, /pages/gallery.html,
+    /legal/*.html, /careers/*.html, etc.
+  -->
+
+</urlset>

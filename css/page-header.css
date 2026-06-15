@@ -1,0 +1,139 @@
+/* ============================================================
+   page-header.css — Vayuron Advanced Systems
+   Shared styles for inner/sub-page headers:
+     - Page hero banner (smaller than homepage hero)
+     - Breadcrumb trail
+     - Back link
+   Used by: about, more-info, technology, products, sectors,
+            contact, careers, gallery, downloads, etc.
+   ============================================================ */
+
+/* ── Page banner (below navbar) ────────────────────── */
+.page-banner {
+  position: relative;
+  padding: 160px var(--section-px) 64px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.page-banner-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 70% 20%, rgba(0, 120, 180, 0.08) 0%, transparent 55%),
+    var(--surface);
+  pointer-events: none;
+}
+
+.page-banner-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+}
+
+.page-banner-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Breadcrumb trail ──────────────────────────────── */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.breadcrumbs a {
+  color: var(--muted);
+  transition: color var(--transition-fast);
+}
+.breadcrumbs a:hover { color: var(--cyan); }
+.breadcrumbs .sep { color: var(--border2); }
+.breadcrumbs .current { color: var(--cyan); }
+
+/* ── Page title ────────────────────────────────────── */
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 84px);
+  color: var(--white);
+  line-height: 0.95;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.page-title .hl { color: var(--cyan); }
+
+.page-subtitle {
+  font-size: clamp(13px, 1.5vw, 16px);
+  color: var(--muted);
+  max-width: 640px;
+  line-height: 1.8;
+}
+
+/* ── Back link ─────────────────────────────────────── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+  transition: color var(--transition-fast), gap var(--transition-fast);
+}
+.back-link:hover { color: var(--cyan); gap: 14px; }
+.back-link svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Generic inner-page section wrapper ────────────── */
+.page-section {
+  padding: var(--space-2xl) var(--section-px);
+}
+.page-section.alt {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── CTA banner (used at bottom of sub-pages) ──────── */
+.cta-banner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 80px var(--section-px);
+}
+.cta-banner .stitle { margin-bottom: 24px; }
+.cta-banner p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto 36px;
+  line-height: 1.8;
+}
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}

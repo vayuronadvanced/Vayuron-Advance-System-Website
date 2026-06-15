@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Vayuron Advanced Systems</title>
+  <meta name="description" content="Vayuron Advanced Systems is an Indian aerospace and defence-technology company building indigenous UAVs, AI, and engineering solutions. Learn our story, vision, mission, and leadership." />
+  <meta property="og:title" content="About Vayuron Advanced Systems" />
+  <meta property="og:description" content="Our story, vision, mission, values, and leadership team." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="/pages/about.html" />
+  <link rel="icon" href="/assets/logos/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/mission.css" />
+  <link rel="stylesheet" href="/css/capabilities.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/page-header.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+
+  <style>
+    /* ── About-page specific layout (kept inline to avoid a new
+         large stylesheet for a single page; promote to css/about.css
+         if more about-style pages are added later) ── */
+
+    .about-intro {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-intro p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .about-intro p:last-child { margin-bottom: 0; }
+
+    /* Vision / Mission / Values cards */
+    .vm-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .vm-card {
+      background: var(--surface);
+      padding: 40px 32px;
+    }
+    .vm-card h3 {
+      font-family: var(--font-ui);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+    .vm-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* Journey / timeline */
+    .timeline {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1px 1fr;
+      gap: 32px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-year {
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+    .timeline-line {
+      background: var(--border2);
+      position: relative;
+    }
+    .timeline-line::before {
+      content: '';
+      position: absolute;
+      top: 6px; left: -3.5px;
+      width: 8px; height: 8px;
+      border: 1.5px solid var(--cyan);
+      background: var(--black);
+      transform: rotate(45deg);
+    }
+    .timeline-content h4 {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .timeline-content p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* Leadership grid */
+    .leader-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .leader-card {
+      background: var(--surface2);
+      padding: 32px;
+      text-align: center;
+    }
+    .leader-photo {
+      width: 88px; height: 88px;
+      margin: 0 auto 20px;
+      border: 1px solid var(--border2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface3);
+    }
+    .leader-photo svg {
+      width: 36px; height: 36px;
+      stroke: var(--dim);
+      fill: none;
+      stroke-width: 1.4;
+    }
+    .leader-name {
+      font-family: var(--font-ui);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .leader-role {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .leader-bio {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1024px) {
+      .about-intro { grid-template-columns: 1fr; gap: 40px; }
+      .vm-grid, .leader-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 80px 1px 1fr; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="navbar-root"></div>
+
+  <!-- ═══════════════════════════════════════
+       PAGE BANNER
+       ═══════════════════════════════════════ -->
+  <section class="page-banner" aria-label="About Vayuron">
+    <div class="page-banner-bg" aria-hidden="true"></div>
+    <div class="page-banner-grid" aria-hidden="true"></div>
+    <div class="page-banner-inner">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/index.html">Home</a>
+        <span class="sep">/</span>
+        <span class="current">About</span>
+      </nav>
+      <div class="section-label reveal">Who We Are</div>
+      <h1 class="page-title reveal d1">ABOUT<br><span class="hl">VAYURON</span></h1>
+      <p class="page-subtitle reveal d2">
+        An Indian aerospace and advanced-technology company building
+        indigenous unmanned systems, artificial intelligence, and
+        precision engineering for defence, government, and industry.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       COMPANY INTRODUCTION
+       ═══════════════════════════════════════ -->
+  <section class="page-section" aria-label="Company Introduction">
+    <div class="about-intro">
+      <div>
+        <div class="section-label reveal">Our Story</div>
+        <h2 class="stitle reveal d1">FOUNDED ON<br>PURPOSE</h2>
+      </div>
+      <div class="reveal d2">
+        <!--
+          PLACEHOLDER CONTENT — replace with real company history,
+          founding story, and milestones.
+        -->
+        <p>
+          Vayuron Advanced Systems was founded with a singular conviction: that
+          India's defence, governance, and industrial systems deserve
+          technology built on home soil, by engineers who understand the
+          terrain, the threats, and the operational realities they are
+          designed for.
+        </p>
+        <p>
+          What began as a small team of aerospace and software engineers
+          working on unmanned aerial platforms has grown into a multi-domain
+          technology company spanning UAV systems, artificial intelligence,
+          enterprise software, and advanced mechanical engineering —
+          all unified by a single mission: reducing dependency on imported
+          critical technology.
+        </p>
+        <p>
+          Today, Vayuron works alongside government bodies, defence
+          establishments, and industrial partners to deliver systems that are
+          field-tested, mission-ready, and built to the exacting standards
+          that critical infrastructure demands.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       VISION / MISSION / VALUES
+       ═══════════════════════════════════════ -->
+  <section class="page-section alt" aria-label="Vision, Mission and Values">
+    <div class="section-wrap" style="margin-bottom:48px;">
+      <div class="section-label reveal">What Drives Us</div>
+      <h2 class="stitle reveal d1">VISION,<br>MISSION &amp; VALUES</h2>
+    </div>
+
+    <div class="vm-grid reveal d2">
+      <div class="vm-card">
+        <h3>Vision</h3>
+        <p>
+          To be India's most trusted indigenous technology partner for
+          defence and critical infrastructure — recognised globally for
+          engineering excellence and operational reliability.
+        </p>
+      </div>
+      <div class="vm-card">
+        <h3>Mission</h3>
+        <p>
+          To design, build, and deploy autonomous systems, intelligent
+          software, and advanced engineering solutions that strengthen
+          national capability and reduce reliance on imported technology.
+        </p>
+      </div>
+      <div class="vm-card">
+        <h3>Values</h3>
+        <p>
+          Precision, accountability, and integrity in every system we
+          ship. We build for environments where failure is not an option —
+          and we hold ourselves to that same standard internally.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       OUR JOURNEY / TIMELINE
+       ═══════════════════════════════════════ -->
+  <section class="page-section" aria-label="Our Journey">
+    <div class="section-wrap" style="margin-bottom:48px;">
+      <div class="section-label reveal">Our Journey</div>
+      <h2 class="stitle reveal d1">KEY<br>MILESTONES</h2>
+    </div>
+
+    <!--
+      PLACEHOLDER TIMELINE — replace years and milestones with
+      real company history. Add/remove .timeline-item blocks as needed.
+    -->
+    <div class="timeline reveal d2">
+      <div class="timeline-item">
+        <div class="timeline-year">2018</div>
+        <div class="timeline-line" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h4>Founded</h4>
+          <p>Vayuron Advanced Systems established with a focus on indigenous UAV design and development.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2020</div>
+        <div class="timeline-line" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h4>First Fixed-Wing Platform</h4>
+          <p>Successful design and flight-testing of our first indigenous fixed-wing UAV for surveillance applications.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-line" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h4>AI &amp; Software Division Launched</h4>
+          <p>Expanded into computer vision, object detection, and operational dashboard software for government and industrial clients.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-line" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h4>DRDO / MoD Vendor Registration</h4>
+          <p>Registered as a vendor for defence procurement, enabling direct engagement with national security agencies.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-line" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h4>Advanced Engineering Division</h4>
+          <p>Established in-house composite manufacturing and CAD capabilities for full product lifecycle development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       LEADERSHIP
+       ═══════════════════════════════════════ -->
+  <section class="page-section alt" aria-label="Leadership Team">
+    <div class="section-wrap" style="margin-bottom:48px;">
+      <div class="section-label reveal">Leadership</div>
+      <h2 class="stitle reveal d1">THE TEAM<br>BEHIND VAYURON</h2>
+    </div>
+
+    <!--
+      PLACEHOLDER LEADERSHIP — replace names, roles, and bios with
+      real leadership information. Add real photos to
+      assets/images/team/ and replace the SVG placeholder icon
+      with an <img> tag.
+    -->
+    <div class="leader-grid reveal d2">
+      <div class="leader-card">
+        <div class="leader-photo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21 C4 16.5 7.5 14 12 14 C16.5 14 20 16.5 20 21"/>
+          </svg>
+        </div>
+        <div class="leader-name">Founder &amp; CEO</div>
+        <div class="leader-role">Chief Executive Officer</div>
+        <p class="leader-bio">
+          Aerospace engineer with a background in unmanned systems
+          design and a vision for indigenous defence technology.
+        </p>
+      </div>
+      <div class="leader-card">
+        <div class="leader-photo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21 C4 16.5 7.5 14 12 14 C16.5 14 20 16.5 20 21"/>
+          </svg>
+        </div>
+        <div class="leader-name">Co-Founder &amp; CTO</div>
+        <div class="leader-role">Chief Technology Officer</div>
+        <p class="leader-bio">
+          Leads AI, computer vision, and software architecture across
+          all product lines, with a focus on real-time systems.
+        </p>
+      </div>
+      <div class="leader-card">
+        <div class="leader-photo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21 C4 16.5 7.5 14 12 14 C16.5 14 20 16.5 20 21"/>
+          </svg>
+        </div>
+        <div class="leader-name">Head of Engineering</div>
+        <div class="leader-role">VP, Advanced Engineering</div>
+        <p class="leader-bio">
+          Oversees composite manufacturing, CAD design, and aerospace
+          structural development from concept to deployment.
+        </p>
+      </div>
+    </div>
+
+    <div class="reveal d3" style="text-align:center; margin-top:32px;">
+      <a class="footer-links" href="/team/leadership.html" style="font-family:var(--font-mono); font-size:11px; letter-spacing:2px; color:var(--muted); text-decoration:none;">
+        View Full Organisation →
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       MORE INFORMATION CTA (req. 7)
+       ═══════════════════════════════════════ -->
+  <section class="cta-banner" aria-label="More Information">
+    <div class="section-label reveal" style="justify-content:center">Go Deeper</div>
+    <h2 class="stitle reveal d1">WANT THE FULL<br>COMPANY PROFILE?</h2>
+    <p class="reveal d2">
+      Explore our complete company information — including certifications,
+      infrastructure, partners, and future roadmap.
+    </p>
+    <div class="cta-actions reveal d3">
+      <!-- "More Information" button -> dedicated page (req. 7) -->
+      <a class="btn-primary" href="/pages/more-info.html">More Information</a>
+      <a class="btn-outline" href="/pages/contact.html">Contact Us</a>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+  <script src="/js/nav-active.js"></script>
+  <script src="/js/mobile-menu.js"></script>
+  <script src="/js/cursor.js"></script>
+  <script src="/js/scroll-reveal.js"></script>
+  <script src="/js/smooth-scroll.js"></script>
+  <script src="/js/main.js"></script>
+
+</body>
+</html>

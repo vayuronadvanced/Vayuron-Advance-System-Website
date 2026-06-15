@@ -1,0 +1,314 @@
+/* ============================================================
+   products.css — Vayuron Advanced Systems
+   Styles for:
+     - pages/products.html (overview/gallery, product cards)
+     - products/*.html (individual product detail pages)
+   ============================================================ */
+
+/* ════════════════════════════════════════════════════════
+   PRODUCTS OVERVIEW (pages/products.html)
+   ════════════════════════════════════════════════════════ */
+
+/* ── Product card grid (2 columns, media-heavy) ────── */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--transition-base);
+}
+.product-card:hover { background: var(--surface2); }
+
+/* Media area — image or video thumbnail */
+.product-card-media {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+}
+.product-card-media img,
+.product-card-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+  filter: grayscale(20%) brightness(0.85);
+}
+.product-card:hover .product-card-media img,
+.product-card:hover .product-card-media video {
+  transform: scale(1.05);
+  filter: grayscale(0%) brightness(1);
+}
+
+/* Placeholder media (until real assets are added) */
+.media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  background:
+    repeating-linear-gradient(45deg, var(--surface2) 0 2px, var(--surface3) 2px 40px);
+}
+.media-placeholder svg {
+  width: 40px; height: 40px;
+  stroke: var(--dim); fill: none; stroke-width: 1.4;
+}
+.media-placeholder span {
+  font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: 2px;
+  color: var(--dim); text-transform: uppercase;
+}
+
+/* Category tag overlay */
+.product-card-tag {
+  position: absolute;
+  top: 16px; left: 16px;
+  padding: 6px 14px;
+  background: rgba(5, 6, 7, 0.85);
+  border: 1px solid var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 2.5px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+}
+
+/* Card body */
+.product-card-body {
+  padding: 28px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.product-card-name {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.product-card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.product-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+.product-card-link svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none; stroke-width: 1.5;
+  transition: transform var(--transition-base);
+}
+.product-card:hover .product-card-link svg {
+  transform: translateX(4px);
+}
+
+/* ── Sectors quick-grid (referenced from products page
+     so "Sectors" mega-menu has an anchor target #sectors) ── */
+#sectors-anchor { position: relative; top: -90px; }
+
+
+/* ════════════════════════════════════════════════════════
+   INDIVIDUAL PRODUCT PAGES (products/*.html)
+   ════════════════════════════════════════════════════════ */
+
+/* ── Hero image/video banner ───────────────────────── */
+.product-hero {
+  position: relative;
+  aspect-ratio: 21/9;
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.product-hero img,
+.product-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.product-hero .media-placeholder {
+  aspect-ratio: 21/9;
+}
+@media (max-width: 768px) {
+  .product-hero { aspect-ratio: 4/3; }
+  .product-hero .media-placeholder { aspect-ratio: 4/3; }
+}
+
+/* ── Specifications table ──────────────────────────── */
+.spec-table {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+}
+.spec-row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  border-bottom: 1px solid var(--border);
+}
+.spec-row:last-child { border-bottom: none; }
+.spec-label {
+  padding: 16px 24px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+}
+.spec-value {
+  padding: 16px 24px;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface2);
+}
+@media (max-width: 768px) {
+  .spec-row { grid-template-columns: 1fr; }
+  .spec-label { border-right: none; border-bottom: 1px solid var(--border); }
+}
+
+/* ── Feature list (icon + title + one-line desc) ───── */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.feature-card {
+  background: var(--surface);
+  padding: 28px 32px;
+}
+.feature-card h4 {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.feature-card h4::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--cyan);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+.feature-card p {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.7;
+  padding-left: 16px;
+}
+@media (max-width: 768px) {
+  .feature-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Video gallery ──────────────────────────────────── */
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.video-gallery .media-placeholder,
+.video-gallery video {
+  aspect-ratio: 16/9;
+  width: 100%;
+  border: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+  .video-gallery { grid-template-columns: 1fr; }
+}
+
+/* ── Downloads / brochure row ───────────────────────── */
+.download-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.download-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  border: 1px solid var(--border2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--text);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color var(--transition-base), color var(--transition-base);
+}
+.download-chip:hover { border-color: var(--cyan); color: var(--cyan); }
+.download-chip svg {
+  width: 16px; height: 16px;
+  stroke: currentColor; fill: none; stroke-width: 1.5;
+  flex-shrink: 0;
+}
+
+/* ── Related technologies / sectors chips ──────────── */
+.related-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.related-chip {
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: border-color var(--transition-base), color var(--transition-base);
+}
+.related-chip:hover { border-color: var(--cyan); color: var(--cyan); }
+
+@media (max-width: 1024px) {
+  .product-grid { grid-template-columns: 1fr; }
+}

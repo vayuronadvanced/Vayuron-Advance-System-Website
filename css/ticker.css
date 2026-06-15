@@ -1,0 +1,39 @@
+/* ============================================================
+   ticker.css — Vayuron Advanced Systems
+   Infinite horizontal technology ticker strip
+   ============================================================ */
+
+#ticker {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.ticker-track {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+  animation: tickerRoll 35s linear infinite;
+  white-space: nowrap;
+}
+
+.t-item {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--dim);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.t-sep {
+  width: 5px;
+  height: 5px;
+  background: var(--cyan);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  opacity: 0.5;
+}

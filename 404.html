@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Vayuron Advanced Systems</title>
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" href="/assets/logos/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/hero.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/page-header.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+
+  <style>
+    #error-zone {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px var(--section-px) 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .error-code {
+      font-family: var(--font-display);
+      font-size: clamp(100px, 20vw, 220px);
+      color: var(--cyan);
+      line-height: 1;
+      letter-spacing: 8px;
+      opacity: 0.9;
+    }
+    .error-title {
+      font-family: var(--font-ui);
+      font-size: clamp(20px, 3vw, 32px);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin: 16px 0 12px;
+    }
+    .error-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .error-actions {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="navbar-root"></div>
+
+  <section id="error-zone">
+    <div class="hero-grid" aria-hidden="true" style="opacity:.5"></div>
+    <div class="hero-scanline" aria-hidden="true"></div>
+
+    <div style="position:relative; z-index:1;">
+      <div class="error-code">404</div>
+      <h1 class="error-title">Signal Lost</h1>
+      <p class="error-sub">The requested coordinates do not exist on this network</p>
+      <div class="error-actions">
+        <a class="btn-primary" href="/index.html">Return to Base</a>
+        <a class="btn-outline" href="/pages/contact.html">Contact Command</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+  <script src="/js/nav-active.js"></script>
+  <script src="/js/mobile-menu.js"></script>
+  <script src="/js/cursor.js"></script>
+  <script src="/js/scroll-reveal.js"></script>
+  <script src="/js/smooth-scroll.js"></script>
+  <script src="/js/main.js"></script>
+
+</body>
+</html>

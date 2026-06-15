@@ -1,0 +1,124 @@
+/* ============================================================
+   base.css — Vayuron Advanced Systems
+   Global body, typography helpers, shared components
+   ============================================================ */
+
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ── Custom cursor dot ──────────────────────────────── */
+#cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: var(--cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+/* ── Shared section wrapper ─────────────────────────── */
+.section-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Section label (eyebrow text) ───────────────────── */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 3.5px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.section-label::before {
+  content: '';
+  width: 36px;
+  height: 1px;
+  background: var(--cyan);
+  flex-shrink: 0;
+}
+
+/* ── Section title ──────────────────────────────────── */
+h2.stitle {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5.5vw, 76px);
+  color: var(--white);
+  line-height: 0.95;
+  letter-spacing: 2px;
+}
+
+/* ── Buttons ─────────────────────────────────────────── */
+.btn-primary {
+  display: inline-block;
+  padding: 15px 40px;
+  background: var(--cyan);
+  color: var(--black);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border: none;
+  transition: background var(--transition-base), transform var(--transition-fast);
+}
+.btn-primary:hover  { background: var(--white); transform: translateY(-2px); }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-outline {
+  display: inline-block;
+  padding: 15px 40px;
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: border-color var(--transition-base), color var(--transition-base), transform var(--transition-fast);
+}
+.btn-outline:hover  { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
+.btn-outline:active { transform: translateY(0); }
+
+/* ── Future integration zone ────────────────────────── */
+.future-zone {
+  border: 1px dashed var(--border2);
+  padding: 36px;
+  text-align: center;
+  margin-top: 48px;
+  position: relative;
+}
+.future-zone::before {
+  content: 'RESERVED — FUTURE INTEGRATION';
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--black);
+  padding: 0 14px;
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 2.5px;
+  color: var(--border2);
+  white-space: nowrap;
+}
+.future-zone p {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--dim);
+}

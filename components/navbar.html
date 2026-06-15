@@ -1,0 +1,83 @@
+<!-- ============================================================
+     components/navbar.html — Vayuron Advanced Systems
+     Shared navigation bar — injected into every page by js/navbar.js
+
+     NOTE: This file is a REFERENCE COPY of the navbar markup.
+     js/navbar.js contains the actual string used for injection
+     (kept in sync with this file). If you edit the navbar,
+     edit BOTH this file (for readability/version control) and
+     the NAVBAR_HTML template string in js/navbar.js.
+
+     Link targets assume this navbar is injected on pages at
+     the site root AND inside /pages/, /sectors/, /products/ etc.
+     js/navbar.js auto-corrects relative paths via data-root.
+     ============================================================ -->
+
+<nav id="navbar" role="banner">
+  <!-- Logo -> redirects to More Information page (req. 7) -->
+  <a class="logo" href="/pages/more-info.html" aria-label="Vayuron Advanced Systems — More Information">
+    <div class="logo-mark" aria-hidden="true"></div>
+    <span class="logo-text">VAYU<em>RON</em></span>
+  </a>
+
+  <div class="nav-links" role="navigation" aria-label="Primary Navigation">
+
+    <!-- Products dropdown (mega-menu style) -->
+    <div class="nav-item-dropdown">
+      <a href="/pages/products.html" data-nav="products">
+        Products <span class="chev">▾</span>
+      </a>
+      <div class="nav-dropdown">
+        <a href="/products/uav-systems.html">UAV Systems</a>
+        <a href="/products/artificial-intelligence.html">Artificial Intelligence</a>
+        <a href="/products/software-systems.html">Software Systems</a>
+        <a href="/products/advanced-engineering.html">Advanced Engineering</a>
+      </div>
+    </div>
+
+    <!-- Sectors dropdown (mega-menu style) -->
+    <div class="nav-item-dropdown">
+      <a href="#" data-nav="sectors">
+        Sectors <span class="chev">▾</span>
+      </a>
+      <div class="nav-dropdown">
+        <a href="/sectors/defence-security.html">Defence &amp; Security</a>
+        <a href="/sectors/smart-cities.html">Smart Cities</a>
+        <a href="/sectors/municipal-operations.html">Municipal Operations</a>
+        <a href="/sectors/infrastructure-monitoring.html">Infrastructure Monitoring</a>
+        <a href="/sectors/agriculture.html">Agriculture</a>
+        <a href="/sectors/disaster-management.html">Disaster Management</a>
+        <a href="/sectors/environmental-monitoring.html">Environmental Monitoring</a>
+        <a href="/sectors/industrial-inspection.html">Industrial Inspection</a>
+      </div>
+    </div>
+
+    <a href="/pages/technology.html" data-nav="technology">Technology</a>
+    <a href="/pages/about.html" data-nav="about">About</a>
+    <a href="/pages/careers.html" data-nav="careers">Careers</a>
+    <a href="/pages/contact.html" data-nav="contact">Contact</a>
+  </div>
+
+  <button class="nav-cta"
+    onclick="window.location.href='/pages/contact.html'"
+    aria-label="Request a Demo">
+    Request Demo
+  </button>
+
+  <div class="nav-hamburger" id="ham" aria-label="Toggle mobile menu" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" role="navigation" aria-label="Mobile Navigation">
+  <a href="/pages/products.html" data-nav="products">Products</a>
+  <a href="#" data-nav="sectors" onclick="window.location.href='/pages/products.html#sectors'; return false;">Sectors</a>
+  <a href="/pages/technology.html" data-nav="technology">Technology</a>
+  <a href="/pages/about.html" data-nav="about">About</a>
+  <a href="/pages/careers.html" data-nav="careers">Careers</a>
+  <a href="/pages/contact.html" data-nav="contact">Contact</a>
+  <button class="nav-cta" onclick="window.location.href='/pages/contact.html'">Request Demo</button>
+</div>

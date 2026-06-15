@@ -1,0 +1,159 @@
+/* ============================================================
+   contact.css — Vayuron Advanced Systems
+   Two-column contact / inquiry section
+   ============================================================ */
+
+#contact {
+  padding: var(--space-2xl) var(--section-px);
+}
+
+/* ── Layout ────────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 110px;
+  align-items: start;
+}
+
+/* ── Left column ───────────────────────────────────── */
+.contact-hl {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4.5vw, 66px);
+  color: var(--white);
+  line-height: 0.95;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+.contact-hl em {
+  color: var(--cyan);
+  font-style: normal;
+}
+
+.contact-body {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 44px;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+.c-diamond {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border: 1px solid var(--cyan);
+  transform: rotate(45deg);
+}
+
+/* ── Partner / cert placeholder ────────────────────── */
+.partner-zone {
+  border: 1px dashed var(--border2);
+  padding: 32px;
+  text-align: center;
+  margin-top: 44px;
+  position: relative;
+}
+.partner-zone::before {
+  content: 'PARTNER LOGOS · CERTIFICATIONS · ACCREDITATIONS — FUTURE INTEGRATION';
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--black);
+  padding: 0 14px;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--border2);
+  white-space: nowrap;
+}
+.partner-zone p {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--dim);
+}
+
+/* ── Form ──────────────────────────────────────────── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-group { margin-bottom: 20px; }
+
+.form-label {
+  display: block;
+  margin-bottom: 9px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 2.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  outline: none;
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base);
+}
+.form-input:focus       { border-color: var(--cyan); background: var(--surface2); }
+.form-input::placeholder { color: var(--dim); }
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 118px;
+}
+
+.form-submit {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: var(--cyan);
+  color: var(--black);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-base), transform var(--transition-fast);
+  margin-top: 8px;
+}
+.form-submit:hover          { background: var(--white); transform: translateY(-2px); }
+.form-submit:active         { transform: translateY(0); }
+.form-submit:disabled       { cursor: not-allowed; }
+.form-submit.sent           { background: var(--cyan3); color: var(--cyan); }
+
+.form-note {
+  margin-top: 14px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--dim);
+  letter-spacing: 1.5px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}

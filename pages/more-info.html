@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Information — Vayuron Advanced Systems</title>
+  <meta name="description" content="Complete company profile for Vayuron Advanced Systems: certifications, infrastructure, partners, registered details, and future roadmap." />
+  <meta property="og:title" content="Vayuron Advanced Systems — Company Information" />
+  <meta property="og:description" content="Certifications, infrastructure, partners, and future roadmap." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="/pages/more-info.html" />
+  <link rel="icon" href="/assets/logos/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/capabilities.css" />
+  <link rel="stylesheet" href="/css/industries.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/page-header.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+
+  <style>
+    /* ── More-info specific layout ── */
+
+    .profile-table {
+      max-width: 1200px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+    }
+    .profile-row {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .profile-row:last-child { border-bottom: none; }
+    .profile-label {
+      padding: 18px 28px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+    }
+    .profile-value {
+      padding: 18px 28px;
+      font-size: 13.5px;
+      color: var(--text);
+      background: var(--surface2);
+    }
+
+    /* Certifications grid */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .cert-card {
+      background: var(--surface2);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .cert-icon {
+      width: 40px; height: 40px;
+      margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--cyan);
+      transform: rotate(45deg);
+    }
+    .cert-icon svg {
+      width: 18px; height: 18px;
+      stroke: var(--cyan); fill: none; stroke-width: 1.5;
+      transform: rotate(-45deg);
+    }
+    .cert-name {
+      font-family: var(--font-ui);
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--white); margin-bottom: 6px;
+    }
+    .cert-desc {
+      font-size: 11.5px; color: var(--muted); line-height: 1.6;
+    }
+
+    /* Infrastructure list */
+    .infra-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .infra-card {
+      background: var(--surface);
+      padding: 32px;
+    }
+    .infra-card h4 {
+      font-family: var(--font-ui);
+      font-size: 15px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--white); margin-bottom: 10px;
+    }
+    .infra-card p {
+      font-size: 12.5px; color: var(--muted); line-height: 1.75;
+    }
+
+    /* Roadmap */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .roadmap-card {
+      background: var(--surface2);
+      padding: 28px 24px;
+    }
+    .roadmap-phase {
+      font-family: var(--font-mono);
+      font-size: 10px; letter-spacing: 2px;
+      color: var(--cyan); text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .roadmap-card h4 {
+      font-family: var(--font-ui);
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--white); margin-bottom: 8px;
+    }
+    .roadmap-card p {
+      font-size: 11.5px; color: var(--muted); line-height: 1.65;
+    }
+
+    /* Partners */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .partner-slot {
+      border: 1px dashed var(--border2);
+      aspect-ratio: 2/1;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 9px; letter-spacing: 2px;
+      color: var(--dim); text-transform: uppercase;
+      text-align: center; padding: 12px;
+    }
+
+    @media (max-width: 1024px) {
+      .profile-row { grid-template-columns: 1fr; }
+      .profile-label { border-right: none; border-bottom: 1px solid var(--border); }
+      .cert-grid, .roadmap-grid, .partner-grid { grid-template-columns: repeat(2, 1fr); }
+      .infra-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 540px) {
+      .cert-grid, .roadmap-grid, .partner-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="navbar-root"></div>
+
+  <!-- ═══════════════════════════════════════
+       PAGE BANNER
+       ═══════════════════════════════════════ -->
+  <section class="page-banner" aria-label="Company Information">
+    <div class="page-banner-bg" aria-hidden="true"></div>
+    <div class="page-banner-grid" aria-hidden="true"></div>
+    <div class="page-banner-inner">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="/pages/about.html">About</a>
+        <span class="sep">/</span>
+        <span class="current">More Information</span>
+      </nav>
+      <div class="section-label reveal">Complete Profile</div>
+      <h1 class="page-title reveal d1">COMPANY<br><span class="hl">INFORMATION</span></h1>
+      <p class="page-subtitle reveal d2">
+        Registered details, certifications, infrastructure, partnerships,
+        and our roadmap for the future — everything you need to evaluate
+        Vayuron as a technology partner.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       COMPANY PROFILE TABLE
+       ═══════════════════════════════════════ -->
+  <section class="page-section" aria-label="Company Profile">
+    <div class="section-wrap" style="margin-bottom:40px;">
+      <div class="section-label reveal">Company Profile</div>
+      <h2 class="stitle reveal d1">REGISTERED<br>DETAILS</h2>
+    </div>
+
+    <!-- PLACEHOLDER — replace with real registration details -->
+    <div class="profile-table reveal d2">
+      <div class="profile-row">
+        <div class="profile-label">Legal Name</div>
+        <div class="profile-value">Vayuron Advanced Systems Pvt. Ltd.</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">Founded</div>
+        <div class="profile-value">2018</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">Headquarters</div>
+        <div class="profile-value">Advanced Technology Centre, India</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">CIN</div>
+        <div class="profile-value">U00000XX0000PTC000000 <span style="color:var(--dim); font-family:var(--font-mono); font-size:10px;">(placeholder)</span></div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">GST Registration</div>
+        <div class="profile-value">00XXXXX0000X0X0 <span style="color:var(--dim); font-family:var(--font-mono); font-size:10px;">(placeholder)</span></div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">Vendor Status</div>
+        <div class="profile-value">DRDO / MoD Registered Vendor</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">Core Domains</div>
+        <div class="profile-value">UAV Systems · Artificial Intelligence · Software Systems · Advanced Engineering</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">Sectors Served</div>
+        <div class="profile-value">Defence &amp; Security, Smart Cities, Municipal Operations, Infrastructure Monitoring, Agriculture, Disaster Management, Environmental Monitoring, Industrial Inspection</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CERTIFICATIONS
+       ═══════════════════════════════════════ -->
+  <section class="page-section alt" aria-label="Certifications">
+    <div class="section-wrap" style="margin-bottom:48px;">
+      <div class="section-label reveal">Certifications</div>
+      <h2 class="stitle reveal d1">QUALITY &amp;<br>COMPLIANCE</h2>
+    </div>
+
+    <!-- PLACEHOLDER — replace with actual certifications -->
+    <div class="cert-grid reveal d2">
+      <div class="cert-card">
+        <div class="cert-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <div class="cert-name">ISO 9001:2015</div>
+        <div class="cert-desc">Quality Management Systems certification (placeholder)</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L22 7 L22 17 L12 22 L2 17 L2 7 Z"/></svg>
+        </div>
+        <div class="cert-name">AS9100D</div>
+        <div class="cert-desc">Aerospace Quality Management certification (placeholder)</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <div class="cert-name">ISO 27001</div>
+        <div class="cert-desc">Information Security Management certification (placeholder)</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg>
+        </div>
+        <div class="cert-name">DGCA Type Certified</div>
+        <div class="cert-desc">UAV platform certification status (placeholder)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       INFRASTRUCTURE
+       ═══════════════════════════════════════ -->
+  <section class="page-section" aria-label="Infrastructure">
+    <div class="section-wrap" style="margin-bottom:48px;">
+      <div class="section-label reveal">Infrastructure</div>
+      <h2 class="stitle reveal d1">FACILITIES &amp;<br>CAPABILITIES</h2>
+    </div>
+
+    <!-- PLACEHOLDER — replace with real facility descriptions -->
+    <div class="infra-grid reveal d2">
+      <div class="infra-card">
+        <h4>R&amp;D &amp; Avionics Lab</h4>
+        <p>Dedicated facility for flight-control software development, sensor integration, and avionics testing for UAV platforms.</p>
+      </div>
+      <div class="infra-card">
+        <h4>Composite Manufacturing Unit</h4>
+        <p>In-house layup, curing, and CNC finishing for carbon-fibre and composite airframe components.</p>
+      </div>
+      <div class="infra-card">
+        <h4>AI &amp; Software Development Centre</h4>
+        <p>Engineering teams focused on computer vision, autonomous decision systems, and cloud-based operational dashboards.</p>
+      </div>
+      <div class="infra-card">
+        <h4>Flight Test Range</h4>
+        <p>Controlled airspace access for flight testing, payload validation, and mission-profile demonstrations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PARTNERS
+       ═══════════════════════════════════════ -->
+  <section class="page-section alt" aria-label="Partners">
+    <div class="section-wrap" style="margin-bottom:48px;">
+      <div class="section-label reveal">Partners &amp; Collaborators</div>
+      <h2 class="stitle reveal d1">WORKING<br>TOGETHER</h2>
+    </div>
+
+    <!-- PLACEHOLDER — replace each slot with a real partner logo (<img>) -->
+    <div class="partner-grid reveal d2">
+      <div class="partner-slot">Partner Logo 1</div>
+      <div class="partner-slot">Partner Logo 2</div>
+      <div class="partner-slot">Partner Logo 3</div>
+      <div class="partner-slot">Partner Logo 4</div>
+      <div class="partner-slot">Partner Logo 5</div>
+      <div class="partner-slot">Partner Logo 6</div>
+      <div class="partner-slot">Partner Logo 7</div>
+      <div class="partner-slot">Partner Logo 8</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FUTURE ROADMAP
+       ═══════════════════════════════════════ -->
+  <section class="page-section" aria-label="Future Roadmap">
+    <div class="section-wrap" style="margin-bottom:48px;">
+      <div class="section-label reveal">Looking Ahead</div>
+      <h2 class="stitle reveal d1">FUTURE<br>ROADMAP</h2>
+    </div>
+
+    <!-- PLACEHOLDER — replace with real roadmap milestones -->
+    <div class="roadmap-grid reveal d2">
+      <div class="roadmap-card">
+        <div class="roadmap-phase">Near-Term</div>
+        <h4>VTOL Platform Expansion</h4>
+        <p>Scaling VTOL production capacity for surveillance and logistics applications.</p>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-phase">Near-Term</div>
+        <h4>AI Model Certification</h4>
+        <p>Formal validation and certification of object-detection and tracking models for defence use.</p>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-phase">Mid-Term</div>
+        <h4>Export Readiness</h4>
+        <p>Pursuing export clearances for select UAV and software platforms to allied nations.</p>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-phase">Long-Term</div>
+        <h4>Swarm Autonomy R&amp;D</h4>
+        <p>Research into multi-agent autonomous coordination for large-scale surveillance missions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA
+       ═══════════════════════════════════════ -->
+  <section class="cta-banner" aria-label="Call to action">
+    <div class="section-label reveal" style="justify-content:center">Next Steps</div>
+    <h2 class="stitle reveal d1">READY TO<br>WORK TOGETHER?</h2>
+    <p class="reveal d2">
+      Explore our products and technology, or reach out directly to discuss
+      your operational requirements.
+    </p>
+    <div class="cta-actions reveal d3">
+      <a class="btn-primary" href="/pages/products.html">Explore Products</a>
+      <a class="btn-outline" href="/pages/contact.html">Contact Us</a>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+  <script src="/js/nav-active.js"></script>
+  <script src="/js/mobile-menu.js"></script>
+  <script src="/js/cursor.js"></script>
+  <script src="/js/scroll-reveal.js"></script>
+  <script src="/js/smooth-scroll.js"></script>
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
