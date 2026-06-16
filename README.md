@@ -62,11 +62,27 @@ This is being built in phases per the upgrade roadmap. Current status:
 - Each product page has breadcrumbs, a "← All Products" back-link, and
   a "Next: [Product] →" CTA chaining to the next product page
 
-### ⏳ Phase 4 — Sectors (NEXT)
-- [ ] 8 pages under `sectors/` — each with overview, challenges, solution,
-      related technologies (4 per sector), related products, case studies, CTA
-- [ ] `css/sectors.css` — shared layout for sector pages
-- [ ] Reusable sector-page template (per upgrade doc: "should reuse the same template")
+### ✅ Phase 4 — Sectors (DONE)
+- [x] `css/sectors.css` — shared layout: overview, stats row, challenges grid,
+      solution block, 4-technology cards, case studies, related chips
+- [x] All 8 sector pages generated from one shared template:
+      `sectors/defence-security.html`, `smart-cities.html`,
+      `municipal-operations.html`, `infrastructure-monitoring.html`,
+      `agriculture.html`, `disaster-management.html`,
+      `environmental-monitoring.html`, `industrial-inspection.html`
+- Each page includes: breadcrumbs + back-link, 3 key statistics,
+  sector overview, 4 challenges, Vayuron's solution block,
+  4 technology cards (each linking to the product page + technology page),
+  2 case-study placeholders, related product chips, and a contact CTA
+
+### ⏳ Phase 5 — Corporate Expansion (NEXT)
+- [ ] `pages/careers.html` — careers landing
+- [ ] `pages/gallery.html` — gallery landing
+- [ ] `pages/downloads.html` — downloads landing
+- [ ] `legal/privacy-policy.html`, `legal/terms.html`,
+      `legal/security.html`, `legal/cookies.html`
+- [ ] `careers/internships.html`, `careers/jobs.html`, `careers/apply.html`
+- [ ] Basic stubs for `news/`, `team/`, `research/` directories
 
 ### Phase 4 — Sectors
 - [ ] 8 pages under `sectors/` — each with overview, challenges, solution,
