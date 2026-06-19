@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vayuron Advanced Systems — Engineering Indigenous Innovation</title>
-  <meta name="description" content="Vayuron Advanced Systems builds indigenous UAVs, AI-powered software, and advanced engineering solutions for defence, industry, and critical infrastructure." />
+  <meta name="description" content="India's leading indigenous defence-tech company building UAV systems, artificial intelligence, software platforms, and advanced engineering solutions for defence, government, and industry." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Vayuron Advanced Systems — Engineering Indigenous Innovation" />
@@ -13,6 +13,8 @@
   <meta property="og:image" content="/assets/images/company/og-cover.jpg" />
 
   <link rel="icon" href="/assets/logos/favicon.ico" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#00d4ff" />
   <link rel="canonical" href="/index.html" />
 
   <!-- Google Fonts -->
@@ -22,6 +24,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/accessibility.css" />
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/navbar.css" />
@@ -38,8 +41,23 @@
 </head>
 <body>
 
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-to-content" href="#main-content">Skip to main content</a>
+
   <!-- Custom cursor dot -->
   <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Loading screen (Phase 6) -->
+  <div id="loading-screen" aria-hidden="true" role="status">
+    <div class="loading-logo">
+      <div class="loading-logo-mark"></div>
+      <span class="loading-logo-text">VAYU<em>RON</em></span>
+    </div>
+    <div class="loading-bar-wrap">
+      <div class="loading-bar"></div>
+    </div>
+    <span class="loading-text">Initialising Systems</span>
+  </div>
 
   <!-- ═══════════════════════════════════════
        NAVBAR (injected by js/navbar.js)
@@ -49,6 +67,8 @@
   <!-- ═══════════════════════════════════════
        HERO
        ═══════════════════════════════════════ -->
+  <main id="main-content" style="display:contents">
+
   <section id="hero" aria-label="Hero">
     <!-- Background video (req. 10) — drop an MP4 in assets/videos/hero/ and uncomment -->
     <!--
@@ -59,6 +79,7 @@
     <div class="hero-bg"      aria-hidden="true"></div>
     <div class="hero-grid"    aria-hidden="true"></div>
     <div class="hero-scanline" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
 
     <!-- Corner brackets -->
     <div class="hc tl" aria-hidden="true"></div>
@@ -67,14 +88,11 @@
     <div class="hc br" aria-hidden="true"></div>
 
     <div class="hero-content">
-      <div class="hero-badge">
-        <div class="badge-dot" aria-hidden="true"></div>
-        <span class="badge-text">Indigenous Technology · Advanced Systems · Mission Ready</span>
-      </div>
+      <!-- Badge removed per HR requirement — box fully removed -->
 
-      <!-- Tagline updated: "VAYURONE ADVANCED SYSTEMS" (req. 1) -->
+      <!-- Tagline updated: "Engineering Indigenous Innovation" (req. 1) -->
       <h1 class="hero-h1">
-        VAYURONE<br>
+        VAYURON<br>
         <span class="hl">ADVANCED</span><br>
         SYSTEMS
       </h1>
@@ -98,17 +116,17 @@
     <!-- Stats sidebar -->
     <div class="hero-stats" aria-label="Key statistics">
       <div class="stat-item">
-        <div class="stat-num">4+</div>
+        <div class="stat-num" data-target="4" data-suffix="+">4+</div>
         <div class="stat-label">Core Domains</div>
       </div>
       <div class="stat-div" aria-hidden="true"></div>
       <div class="stat-item">
-        <div class="stat-num">8</div>
+        <div class="stat-num" data-target="8">8</div>
         <div class="stat-label">Sectors Served</div>
       </div>
       <div class="stat-div" aria-hidden="true"></div>
       <div class="stat-item">
-        <div class="stat-num">100%</div>
+        <div class="stat-num" data-target="100" data-suffix="%">100%</div>
         <div class="stat-label">Indigenous</div>
       </div>
     </div>
@@ -188,7 +206,7 @@
         </p>
       </div>
 
-      <div class="cap-grid reveal d2">
+      <div class="cap-grid reveal d2 stagger-children">
 
         <!-- UAV Systems -->
         <a class="cap-card" href="/products/uav-systems.html">
@@ -289,14 +307,14 @@
        SECTORS PREVIEW (each card -> dedicated
        page, req. 8)
        ═══════════════════════════════════════ -->
-  <section id="industries" aria-label="Sectors Served">
+  <section id="sectors" aria-label="Sectors Served">
     <div class="section-wrap">
       <div class="ind-head">
         <div class="section-label reveal">Sectors Served</div>
         <h2 class="stitle reveal d1">SECTORS WE<br>OPERATE IN</h2>
       </div>
 
-      <div class="ind-grid">
+      <div class="ind-grid stagger-children">
 
         <a class="ind-card reveal" href="/sectors/defence-security.html">
           <span class="ind-num" aria-hidden="true">01</span>
@@ -436,6 +454,8 @@
   <!-- ═══════════════════════════════════════
        FOOTER (injected by js/footer.js)
        ═══════════════════════════════════════ -->
+  </main>
+
   <div id="footer-root"></div>
 
   <!-- JavaScript -->
@@ -448,6 +468,9 @@
   <script src="js/scroll-reveal.js"></script>
   <script src="js/smooth-scroll.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
 
+  <script src="/js/performance.js"></script>
+  <script src="/js/seo.js"></script>
 </body>
 </html>

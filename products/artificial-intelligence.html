@@ -4,18 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artificial Intelligence — Vayuron Advanced Systems</title>
-  <meta name="description" content="Vayuron AI solutions: computer vision, object detection, tracking, and autonomous decision systems for real-time defence and industrial operations." />
+  <meta name="description" content="Vayuron AI solutions: computer vision, object detection, multi-object tracking, and autonomous decision systems for real-time defence and industrial operations." />
   <meta property="og:title" content="Artificial Intelligence — Vayuron Advanced Systems" />
   <meta property="og:description" content="Computer vision and autonomous decision systems built for mission-critical environments." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.vayuron.in/assets/images/company/og-cover.jpg" />
+  <meta property="og:site_name" content="Vayuron Advanced Systems" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@VayuronSystems" />
   <link rel="canonical" href="/products/artificial-intelligence.html" />
   <link rel="icon" href="/assets/logos/favicon.ico" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#00d4ff" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/accessibility.css" />
   <link rel="stylesheet" href="/css/variables.css" />
   <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/navbar.css" />
@@ -27,12 +34,24 @@
 </head>
 <body>
 
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-to-content" href="#main-content">Skip to main content</a>
+
   <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen" aria-hidden="true" role="status">
+    <div class="loading-logo"><div class="loading-logo-mark"></div><span class="loading-logo-text">VAYU<em>RON</em></span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+    <span class="loading-text">Initialising Systems</span>
+  </div>
   <div id="navbar-root"></div>
 
   <!-- ═══════════════════════════════════════
        PAGE BANNER
        ═══════════════════════════════════════ -->
+  <main id="main-content" style="display:contents">
+
   <section class="page-banner" aria-label="Artificial Intelligence">
     <div class="page-banner-bg" aria-hidden="true"></div>
     <div class="page-banner-grid" aria-hidden="true"></div>
@@ -86,34 +105,34 @@
     </div>
 
     <!-- PLACEHOLDER specs -->
-    <div class="spec-table reveal d2">
+        <div class="spec-table reveal d2">
       <div class="spec-row">
         <div class="spec-label">Detection Models</div>
-        <div class="spec-value">Custom-trained CNN / transformer-based (placeholder)</div>
+        <div class="spec-value">CNN / Transformer</div>
       </div>
       <div class="spec-row">
         <div class="spec-label">Inference Speed</div>
-        <div class="spec-value">30+ FPS on edge hardware (placeholder)</div>
+        <div class="spec-value">30+ FPS</div>
       </div>
       <div class="spec-row">
         <div class="spec-label">Deployment</div>
-        <div class="spec-value">Edge (onboard UAV) or cloud-based</div>
+        <div class="spec-value">Edge or Cloud</div>
       </div>
       <div class="spec-row">
         <div class="spec-label">Object Classes</div>
-        <div class="spec-value">Vehicles, personnel, infrastructure, custom classes</div>
+        <div class="spec-value">Vehicles / Personnel</div>
       </div>
       <div class="spec-row">
         <div class="spec-label">Tracking</div>
-        <div class="spec-value">Multi-object tracking with re-identification</div>
+        <div class="spec-value">Multi-Object + ReID</div>
       </div>
       <div class="spec-row">
         <div class="spec-label">Data Output</div>
-        <div class="spec-value">REST API, live dashboard feed, alert webhooks</div>
+        <div class="spec-value">REST API / Webhook</div>
       </div>
       <div class="spec-row">
         <div class="spec-label">Security</div>
-        <div class="spec-value">On-premise / air-gapped deployment available</div>
+        <div class="spec-value">Air-Gap Available</div>
       </div>
     </div>
   </section>
@@ -232,6 +251,8 @@
     </div>
   </section>
 
+  </main>
+
   <div id="footer-root"></div>
 
   <script src="/js/utils.js"></script>
@@ -243,6 +264,9 @@
   <script src="/js/scroll-reveal.js"></script>
   <script src="/js/smooth-scroll.js"></script>
   <script src="/js/main.js"></script>
+  <script src="/js/animations.js"></script>
 
+  <script src="/js/performance.js"></script>
+  <script src="/js/seo.js"></script>
 </body>
 </html>

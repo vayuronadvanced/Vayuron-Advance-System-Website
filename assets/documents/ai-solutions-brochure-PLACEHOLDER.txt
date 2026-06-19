@@ -1,0 +1,2 @@
+Replace this with the real ai-solutions-brochure.pdf
+Place the PDF file at: assets/documents/ai-solutions-brochure.pdf

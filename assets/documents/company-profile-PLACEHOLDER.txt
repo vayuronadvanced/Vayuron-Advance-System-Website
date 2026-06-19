@@ -1,0 +1,2 @@
+Replace this with the real company-profile.pdf
+Place the PDF file at: assets/documents/company-profile.pdf

@@ -38,7 +38,7 @@ const NAVBAR_HTML = `
     </div>
 
     <div class="nav-item-dropdown">
-      <a href="/pages/products.html#sectors" data-nav="sectors">
+      <a href="/index.html#sectors" data-nav="sectors">
         Sectors <span class="chev">▾</span>
       </a>
       <div class="nav-dropdown">
@@ -72,7 +72,7 @@ const NAVBAR_HTML = `
 
 <div id="mobile-menu" role="navigation" aria-label="Mobile Navigation">
   <a href="/pages/products.html" data-nav="products">Products</a>
-  <a href="/pages/products.html#sectors" data-nav="sectors">Sectors</a>
+  <a href="/index.html#sectors" data-nav="sectors">Sectors</a>
   <a href="/pages/technology.html" data-nav="technology">Technology</a>
   <a href="/pages/about.html" data-nav="about">About</a>
   <a href="/pages/careers.html" data-nav="careers">Careers</a>

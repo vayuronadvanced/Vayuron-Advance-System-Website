@@ -1,0 +1,239 @@
+/* ============================================================
+   accessibility.css — Vayuron Advanced Systems
+   Phase 7 — Accessibility hardening.
+   Loaded on every page after base.css.
+
+   Covers:
+     - Skip-to-content link
+     - :focus-visible keyboard indicators
+     - Reduced motion (supplements animations.css)
+     - Screen-reader utilities
+     - High-contrast mode support
+     - ARIA live region styling
+   ============================================================ */
+
+/* ── Skip to content ───────────────────────────────── */
+.skip-to-content {
+  position: fixed;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 24px;
+  background: var(--cyan);
+  color: var(--black);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: top 0.2s ease;
+  outline: none;
+}
+.skip-to-content:focus {
+  top: 16px;
+}
+
+/* ── Focus visible — keyboard navigation indicators ── */
+/* Remove browser default where we override, restore for keyboard */
+*:focus { outline: none; }
+
+*:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* Buttons and links — stronger visible ring */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* Nav links specifically */
+.nav-links a:focus-visible,
+#mobile-menu a:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+  color: var(--white);
+}
+
+/* Buttons — no border-radius on square buttons */
+.btn-primary:focus-visible,
+.btn-outline:focus-visible,
+.nav-cta:focus-visible,
+.form-submit:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+  border-radius: 0;
+}
+
+/* Cards that are links */
+.cap-card:focus-visible,
+.ind-card:focus-visible,
+.product-card:focus-visible,
+.tech-card:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 0;
+  background: var(--surface2);
+}
+
+/* ── Screen reader utilities ───────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Make sr-only focusable when focused (e.g. skip-to links) */
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ── ARIA live regions ──────────────────────────────── */
+[role="status"],
+[role="alert"],
+[aria-live] {
+  /* These are announced to screen readers — keep them in the DOM */
+}
+
+/* ── Reduced motion (comprehensive) ───────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .stagger-children > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  #loading-screen { display: none !important; }
+  .ticker-track   { animation: none !important; }
+  .hero-grid      { animation: none !important; }
+  .hero-scanline  { animation: none !important; }
+  .loading-bar    { animation: none !important; }
+  .scroll-arrow   { animation: none !important; }
+  .badge-dot      { animation: none !important; }
+}
+
+/* ── High contrast mode ─────────────────────────────── */
+@media (forced-colors: active) {
+  :root {
+    --cyan:   Highlight;
+    --white:  CanvasText;
+    --text:   CanvasText;
+    --muted:  GrayText;
+    --border: ButtonBorder;
+    --black:  Canvas;
+  }
+
+  .logo-mark,
+  .logo-mark::after {
+    forced-color-adjust: none;
+  }
+
+  .btn-primary,
+  .btn-outline,
+  .nav-cta {
+    forced-color-adjust: none;
+    border: 2px solid ButtonText;
+  }
+}
+
+/* ── Touch target minimum sizes (mobile accessibility) */
+@media (pointer: coarse) {
+  .nav-links a,
+  .nav-cta,
+  .btn-primary,
+  .btn-outline,
+  .social-btn,
+  .footer-links a,
+  .breadcrumbs a,
+  .back-link {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .social-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Hamburger — larger tap target */
+  .nav-hamburger {
+    padding: 12px;
+    margin: -12px;
+  }
+}
+
+/* ── Print styles ───────────────────────────────────── */
+@media print {
+  #navbar,
+  #loading-screen,
+  #cursor-dot,
+  #mobile-menu,
+  #scroll-progress,
+  .hero-scanline,
+  .animated-grid,
+  .scroll-hint,
+  .cta-banner,
+  .footer-newsletter,
+  .ticker-track,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  a { color: black !important; text-decoration: underline; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 9pt; }
+  a[href^="#"]::after,
+  a[href^="tel:"]::after,
+  a[href^="mailto:"]::after { content: ""; }
+
+  h1, h2, h3, h4 { color: black !important; }
+
+  .page-banner { padding-top: 40pt; background: none !important; }
+  .page-title  { color: black !important; font-size: 28pt; }
+  .section-wrap { max-width: 100%; }
+}

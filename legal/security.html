@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security — Vayuron Advanced Systems</title>
+  <meta name="description" content="Vayuron Advanced Systems security policy and responsible disclosure process." />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="/legal/security.html" />
+  <link rel="icon" href="/assets/logos/favicon.ico" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#00d4ff" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/accessibility.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/corporate.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/page-header.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+
+  <style>
+    .legal-body { max-width:800px; margin:0 auto; }
+    .legal-body h3 { font-family:var(--font-ui); font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--white); margin:36px 0 12px; padding-top:36px; border-top:1px solid var(--border); }
+    .legal-body h3:first-of-type { border-top:none; padding-top:0; margin-top:0; }
+    .legal-body p { font-size:13.5px; color:var(--muted); line-height:1.85; margin-bottom:14px; }
+    .legal-body ul { list-style:none; margin:0 0 14px; }
+    .legal-body ul li { font-size:13.5px; color:var(--muted); line-height:1.8; padding:4px 0 4px 20px; position:relative; }
+    .legal-body ul li::before { content:'›'; color:var(--cyan); position:absolute; left:4px; }
+    .legal-meta { font-family:var(--font-mono); font-size:10.5px; letter-spacing:2px; color:var(--dim); margin-bottom:48px; }
+    .legal-nav { display:flex; gap:16px; flex-wrap:wrap; margin-top:48px; padding-top:32px; border-top:1px solid var(--border); }
+    .legal-nav a { font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; color:var(--muted); text-decoration:none; transition:color var(--transition-fast); }
+    .legal-nav a:hover, .legal-nav a.active { color:var(--cyan); }
+
+    .security-highlight {
+      border: 1px solid var(--cyan);
+      padding: 24px 28px;
+      margin: 32px 0;
+      background: rgba(0,212,255,0.03);
+    }
+    .security-highlight p {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--text);
+      margin-bottom: 0;
+    }
+    .security-highlight strong { color: var(--cyan); }
+  </style>
+</head>
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-to-content" href="#main-content">Skip to main content</a>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen" aria-hidden="true" role="status">
+    <div class="loading-logo"><div class="loading-logo-mark"></div><span class="loading-logo-text">VAYU<em>RON</em></span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+    <span class="loading-text">Initialising Systems</span>
+  </div>
+  <div id="navbar-root"></div>
+
+  <main id="main-content" style="display:contents">
+
+  <section class="page-banner" aria-label="Security Policy">
+    <div class="page-banner-bg" aria-hidden="true"></div>
+    <div class="page-banner-grid" aria-hidden="true"></div>
+    <div class="page-banner-inner">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="/legal/security.html">Legal</a>
+        <span class="sep">/</span>
+        <span class="current">Security</span>
+      </nav>
+      <div class="section-label reveal">Legal</div>
+      <h1 class="page-title reveal d1">SECURITY<br><span class="hl">POLICY</span></h1>
+      <p class="page-subtitle reveal d2">
+        Our approach to website and data security, and how to
+        responsibly report a vulnerability.
+      </p>
+    </div>
+  </section>
+
+  <section class="page-section" aria-label="Security Policy Content">
+    <div class="legal-body reveal">
+      <p class="legal-meta">Last Updated: June 2025</p>
+
+      <h3>Our Security Commitment</h3>
+      <p>
+        Vayuron Advanced Systems takes the security of our website, systems,
+        and customer data seriously. Given the nature of our work in defence
+        and critical infrastructure technology, we apply rigorous security
+        standards across all digital systems we develop and operate.
+      </p>
+
+      <h3>Website Security Measures</h3>
+      <ul>
+        <li>All pages served over HTTPS with TLS 1.3 encryption</li>
+        <li>HTTP Strict Transport Security (HSTS) enforced</li>
+        <li>Contact form data transmitted with end-to-end encryption</li>
+        <li>Content Security Policy (CSP) headers to prevent XSS attacks</li>
+        <li>Regular security reviews and dependency audits</li>
+        <li>No storage of sensitive user data beyond what is described in our Privacy Policy</li>
+      </ul>
+
+      <h3>Responsible Disclosure</h3>
+      <p>
+        If you believe you have discovered a security vulnerability in our
+        website or digital systems, we ask you to report it to us responsibly
+        before making it public.
+      </p>
+
+      <div class="security-highlight">
+        <p>
+          <strong>Report vulnerabilities to:</strong><br />
+          Email: <a href="mailto:PASTE_EMAIL_HERE" style="color:var(--cyan); text-decoration:none;">PASTE_EMAIL_HERE</a><br />
+          Subject line: <strong>SECURITY DISCLOSURE — [Brief Description]</strong>
+        </p>
+      </div>
+
+      <h3>What to Include in Your Report</h3>
+      <ul>
+        <li>A description of the vulnerability and its potential impact</li>
+        <li>Steps to reproduce the issue</li>
+        <li>Any proof-of-concept code or screenshots (if applicable)</li>
+        <li>Your contact information for follow-up</li>
+      </ul>
+
+      <h3>Our Commitments to Researchers</h3>
+      <ul>
+        <li>We will acknowledge your report within 5 business days</li>
+        <li>We will keep you informed of the status of the fix</li>
+        <li>We will not take legal action against researchers who follow this responsible disclosure process</li>
+        <li>We will credit researchers who identify valid vulnerabilities (with their consent)</li>
+      </ul>
+
+      <h3>Out of Scope</h3>
+      <p>The following are outside the scope of our security disclosure programme:</p>
+      <ul>
+        <li>Social engineering of Vayuron personnel</li>
+        <li>Denial of service attacks against our infrastructure</li>
+        <li>Physical security testing</li>
+        <li>Vulnerabilities in third-party services we use (report directly to those providers)</li>
+      </ul>
+
+      <h3>Note on Defence Systems</h3>
+      <p>
+        Security vulnerabilities in Vayuron's field-deployed defence and
+        industrial systems are outside the scope of this website security
+        disclosure programme and must be reported through appropriate
+        government and regulatory channels.
+      </p>
+
+      <nav class="legal-nav" aria-label="Other legal pages">
+        <a href="/legal/privacy-policy.html">Privacy Policy</a>
+        <a href="/legal/terms.html">Terms of Use</a>
+        <a href="/legal/cookies.html">Cookie Policy</a>
+        <a class="active" href="/legal/security.html">Security</a>
+      </nav>
+    </div>
+  </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+  <script src="/js/nav-active.js"></script>
+  <script src="/js/mobile-menu.js"></script>
+  <script src="/js/cursor.js"></script>
+  <script src="/js/scroll-reveal.js"></script>
+  <script src="/js/smooth-scroll.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/animations.js"></script>
+
+  <script src="/js/performance.js"></script>
+  <script src="/js/seo.js"></script>
+</body>
+</html>

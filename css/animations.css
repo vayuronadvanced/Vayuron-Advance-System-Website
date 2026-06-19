@@ -62,3 +62,319 @@
   opacity: 1;
   transform: none;
 }
+
+/* ============================================================
+   PHASE 6 — VISUAL POLISH
+   Additional keyframes, animation utilities, transitions,
+   counter animations, page transitions, loading screen,
+   hover effects, parallax, and interactive cursor upgrade.
+   ============================================================ */
+
+/* ── Page-transition fade ──────────────────────────── */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-transition-in {
+  animation: pageFadeIn 0.55s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* ── Loading screen ────────────────────────────────── */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: fadeUp 0.6s ease both;
+}
+.loading-logo-mark {
+  width: 32px; height: 32px;
+  border: 1.5px solid var(--cyan);
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loadingSpin 1.5s ease-in-out infinite;
+}
+.loading-logo-mark::after {
+  content: '';
+  width: 10px; height: 10px;
+  background: var(--cyan);
+  animation: loadingPulse 1.5s ease-in-out infinite;
+}
+.loading-logo-text {
+  font-family: var(--font-ui);
+  font-size: 20px; font-weight: 700;
+  letter-spacing: 4px; text-transform: uppercase;
+  color: var(--white);
+}
+.loading-logo-text em { color: var(--cyan); font-style: normal; }
+
+.loading-bar-wrap {
+  width: 220px; height: 1px;
+  background: var(--border);
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+.loading-bar {
+  position: absolute;
+  top: 0; left: -100%; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  animation: loadingBar 1.2s ease-in-out infinite;
+}
+.loading-text {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 3px;
+  color: var(--dim); text-transform: uppercase;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+@keyframes loadingSpin {
+  0%, 100% { transform: rotate(45deg) scale(1); }
+  50%       { transform: rotate(225deg) scale(1.1); }
+}
+@keyframes loadingPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+@keyframes loadingBar {
+  from { left: -100%; }
+  to   { left: 100%; }
+}
+
+/* ── Counter animation ─────────────────────────────── */
+.count-up {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Stat items with counter support ──────────────── */
+.stat-num[data-target],
+.sector-stat-num[data-target] {
+  transition: none;
+}
+
+/* ── Enhanced card hover effects ──────────────────── */
+.cap-card,
+.ind-card,
+.product-card,
+.tech-card,
+.sector-card {
+  will-change: transform;
+  transition:
+    background var(--transition-base),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s ease;
+}
+.cap-card:hover,
+.tech-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.06);
+}
+.ind-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.08);
+}
+
+/* ── Tilt effect base (applied by animations.js) ───── */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.1s linear;
+}
+.tilt-card-inner {
+  transform: translateZ(12px);
+}
+
+/* ── Parallax section ──────────────────────────────── */
+.parallax-bg {
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+
+/* ── Animated grid overlay (phase 6 upgrade) ───────── */
+.animated-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  animation: gridDrift 20s linear infinite;
+  pointer-events: none;
+}
+.animated-grid.fine {
+  background-size: 32px 32px;
+  opacity: 0.6;
+}
+.animated-grid.reverse {
+  animation-direction: reverse;
+}
+
+/* ── Scanline on any section ───────────────────────── */
+.section-scanline {
+  position: absolute;
+  left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  animation: scanMove 6s ease-in-out infinite;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* ── Hero video ────────────────────────────────────── */
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  z-index: 0;
+  filter: grayscale(30%) brightness(0.7);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video-bg { display: none; }
+  .animated-grid  { animation: none; }
+  .hero-scanline  { animation: none; }
+  .ticker-track   { animation: none; }
+  .scroll-arrow   { animation: none; }
+  .loading-bar    { animation: none; }
+}
+
+/* ── Glitch text effect (used on hero .hl on hover) ── */
+@keyframes glitch1 {
+  0%, 100% { clip-path: inset(0 0 90% 0); transform: translate(-2px, 0); }
+  20%       { clip-path: inset(30% 0 50% 0); transform: translate(2px, 0); }
+  40%       { clip-path: inset(60% 0 20% 0); transform: translate(-1px, 0); }
+  60%       { clip-path: inset(10% 0 80% 0); transform: translate(1px, 0); }
+  80%       { clip-path: inset(80% 0 5% 0);  transform: translate(-2px, 0); }
+}
+@keyframes glitch2 {
+  0%, 100% { clip-path: inset(50% 0 30% 0); transform: translate(2px, 0); color: var(--cyan2); }
+  25%       { clip-path: inset(15% 0 70% 0); transform: translate(-2px, 0); }
+  50%       { clip-path: inset(75% 0 10% 0); transform: translate(1px, 0); color: var(--cyan); }
+  75%       { clip-path: inset(35% 0 45% 0); transform: translate(-1px, 0); }
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  color: var(--cyan);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+.glitch:hover::before {
+  animation: glitch1 0.4s steps(2) both;
+  color: rgba(0, 212, 255, 0.7);
+}
+.glitch:hover::after {
+  animation: glitch2 0.4s steps(3) both;
+}
+
+/* ── Typed cursor blink ─────────────────────────────── */
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.typed-cursor {
+  display: inline-block;
+  width: 2px; height: 1em;
+  background: var(--cyan);
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  animation: cursorBlink 0.8s step-end infinite;
+}
+
+/* ── Stagger children (applied by JS) ───────────────── */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.stagger-children.visible > * { opacity: 1; transform: none; }
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.12s; }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.19s; }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.26s; }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.33s; }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.40s; }
+.stagger-children.visible > *:nth-child(7) { transition-delay: 0.47s; }
+.stagger-children.visible > *:nth-child(8) { transition-delay: 0.54s; }
+
+/* ── Magnetic button effect (applied by JS) ─────────── */
+.magnetic {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Noise overlay (subtle texture on hero) ─────────── */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ── Button pulse ring (on primary CTA) ─────────────── */
+@keyframes ringPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.35); }
+  70%  { box-shadow: 0 0 0 12px rgba(0, 212, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+}
+.btn-primary.pulse {
+  animation: ringPulse 2.5s ease-out infinite;
+}
+
+/* ── Reveal variants ─────────────────────────────────── */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity var(--transition-reveal), transform var(--transition-reveal);
+}
+.reveal-left.visible { opacity: 1; transform: none; }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity var(--transition-reveal), transform var(--transition-reveal);
+}
+.reveal-right.visible { opacity: 1; transform: none; }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity var(--transition-reveal), transform var(--transition-reveal);
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+

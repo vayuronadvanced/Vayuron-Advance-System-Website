@@ -1,0 +1,2 @@
+Replace this with the real uav-systems-brochure.pdf
+Place the PDF file at: assets/documents/uav-systems-brochure.pdf

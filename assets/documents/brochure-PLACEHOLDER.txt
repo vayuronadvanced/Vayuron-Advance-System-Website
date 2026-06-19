@@ -1,0 +1,2 @@
+Replace this with the real brochure.pdf
+Place the PDF file at: assets/documents/brochure.pdf

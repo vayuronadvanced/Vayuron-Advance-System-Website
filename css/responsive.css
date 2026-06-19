@@ -56,3 +56,82 @@
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
 
 }
+
+/* ============================================================
+   Phase 7 — Additional responsive rules
+   ============================================================ */
+
+/* ── Extra-large screens (≥1440px) ────────────────── */
+@media (min-width: 1440px) {
+  :root { --section-px: 80px; }
+  .hero-h1      { font-size: 140px; }
+  .section-wrap { max-width: 1320px; }
+  .cap-grid     { grid-template-columns: repeat(4, 1fr); }
+  .ind-grid     { grid-template-columns: repeat(4, 1fr); }
+  .tech-grid    { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── Landscape mobile (height < 500px) ────────────── */
+@media (max-height: 500px) and (orientation: landscape) {
+  #hero         { min-height: auto; padding: 100px 24px 60px; }
+  .hero-h1      { font-size: 48px; }
+  .hero-stats   { display: none; }
+  .scroll-hint  { display: none; }
+}
+
+/* ── Very small phones (≤360px) ────────────────────── */
+@media (max-width: 360px) {
+  :root { --section-px: 16px; }
+  .hero-h1            { font-size: 44px; }
+  .hero-actions       { flex-direction: column; }
+  .btn-primary,
+  .btn-outline        { width: 100%; text-align: center; justify-content: center; }
+  .footer-bottom      { flex-direction: column; gap: 12px; }
+  .footer-legal       { flex-wrap: wrap; gap: 12px; }
+  .breadcrumbs        { font-size: 9px; }
+  .cta-actions        { flex-direction: column; align-items: stretch; }
+}
+
+/* ── Navbar on small screens ────────────────────────── */
+@media (max-width: 768px) {
+  #navbar { padding: 0 20px; height: 64px; }
+
+  .spec-table         { grid-template-columns: 1fr; }
+  .spec-row.wide      { flex-direction: column; align-items: flex-start; }
+
+  .org-level          { gap: 12px; }
+  .org-node           { min-width: 130px; padding: 16px; }
+  .org-divisions      { grid-template-columns: 1fr; }
+  .org-support        { grid-template-columns: 1fr; }
+
+  .partner-grid       { grid-template-columns: repeat(2,1fr); }
+  .cert-grid          { grid-template-columns: repeat(2,1fr); }
+  .roadmap-grid       { grid-template-columns: repeat(2,1fr); }
+
+  .vm-grid            { grid-template-columns: 1fr; }
+  .leader-grid        { grid-template-columns: 1fr !important; }
+
+  .timeline-item      { grid-template-columns: 64px 1px 1fr; gap: 16px; }
+  .timeline-year      { font-size: 24px; }
+
+  .video-gallery      { grid-template-columns: 1fr; }
+  .download-row       { flex-direction: column; }
+  .download-chip      { width: 100%; }
+}
+
+/* ── Sector / product page specifics on mobile ─────── */
+@media (max-width: 640px) {
+  .domain-header      { gap: 16px; }
+  .domain-header h2   { font-size: 32px; }
+  .point-grid         { grid-template-columns: 1fr; }
+  .profile-row        { grid-template-columns: 1fr; }
+  .profile-label      { border-right: none; border-bottom: 1px solid var(--border); }
+  .sector-stats       { grid-template-columns: 1fr; }
+  .case-grid          { grid-template-columns: 1fr; }
+  .challenges-grid    { grid-template-columns: 1fr; }
+  .infra-grid         { grid-template-columns: 1fr; }
+  .partner-grid       { grid-template-columns: 1fr; }
+  .job-card           { grid-template-columns: 1fr; }
+  .filter-bar         { gap: 8px; }
+  .filter-chip        { font-size: 9px; padding: 6px 14px; }
+}

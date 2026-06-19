@@ -4,18 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us — Vayuron Advanced Systems</title>
-  <meta name="description" content="Vayuron Advanced Systems is an Indian aerospace and defence-technology company building indigenous UAVs, AI, and engineering solutions. Learn our story, vision, mission, and leadership." />
+  <meta name="description" content="Vayuron Advanced Systems: our founding story, vision, mission, values, leadership team, and journey building indigenous defence technology in India." />
   <meta property="og:title" content="About Vayuron Advanced Systems" />
   <meta property="og:description" content="Our story, vision, mission, values, and leadership team." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.vayuron.in/assets/images/company/og-cover.jpg" />
+  <meta property="og:site_name" content="Vayuron Advanced Systems" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@VayuronSystems" />
   <link rel="canonical" href="/pages/about.html" />
   <link rel="icon" href="/assets/logos/favicon.ico" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#00d4ff" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/accessibility.css" />
   <link rel="stylesheet" href="/css/variables.css" />
   <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/navbar.css" />
@@ -188,12 +195,24 @@
 </head>
 <body>
 
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-to-content" href="#main-content">Skip to main content</a>
+
   <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen" aria-hidden="true" role="status">
+    <div class="loading-logo"><div class="loading-logo-mark"></div><span class="loading-logo-text">VAYU<em>RON</em></span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+    <span class="loading-text">Initialising Systems</span>
+  </div>
   <div id="navbar-root"></div>
 
   <!-- ═══════════════════════════════════════
        PAGE BANNER
        ═══════════════════════════════════════ -->
+  <main id="main-content" style="display:contents">
+
   <section class="page-banner" aria-label="About Vayuron">
     <div class="page-banner-bg" aria-hidden="true"></div>
     <div class="page-banner-grid" aria-hidden="true"></div>
@@ -356,60 +375,67 @@
     </div>
 
     <!--
-      PLACEHOLDER LEADERSHIP — replace names, roles, and bios with
-      real leadership information. Add real photos to
-      assets/images/team/ and replace the SVG placeholder icon
-      with an <img> tag.
+      PLACEHOLDER LEADERSHIP — replace photo, name, role, bio, and quote
+      with real information. Save photos to /assets/images/team/
+      and swap the SVG for a real <img> tag (88x88, border-radius:50%).
     -->
-    <div class="leader-grid reveal d2">
+    <div class="leader-grid reveal d2" style="grid-template-columns:repeat(2,1fr); max-width:900px; margin:0 auto;">
+
+      <!-- ── CEO Card ─────────────────────────── -->
       <div class="leader-card">
         <div class="leader-photo" aria-hidden="true">
+          <!-- REPLACE with: <img src="/assets/images/team/ceo.jpg" alt="CEO Name" style="width:88px;height:88px;border-radius:50%;object-fit:cover;"> -->
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="8" r="4"/>
             <path d="M4 21 C4 16.5 7.5 14 12 14 C16.5 14 20 16.5 20 21"/>
           </svg>
         </div>
-        <div class="leader-name">Founder &amp; CEO</div>
+        <div class="leader-name">Founder &amp; CEO</div><!-- REPLACE: real name -->
         <div class="leader-role">Chief Executive Officer</div>
         <p class="leader-bio">
           Aerospace engineer with a background in unmanned systems
           design and a vision for indigenous defence technology.
         </p>
+        <!-- CEO quote — replace text inside quotes with a real statement -->
+        <blockquote style="margin-top:16px;padding:14px 16px;border-left:2px solid var(--cyan);font-size:12px;color:var(--muted);font-style:italic;line-height:1.75;background:var(--surface3);">
+          "We build systems that protect what matters most —
+          and we build them here, on Indian soil."
+          <cite style="display:block;margin-top:10px;font-style:normal;font-family:var(--font-mono);font-size:10px;letter-spacing:1px;color:var(--dim);">
+            — Founder &amp; CEO, Vayuron Advanced Systems
+          </cite>
+        </blockquote>
       </div>
+
+      <!-- ── CTO Card ─────────────────────────── -->
       <div class="leader-card">
         <div class="leader-photo" aria-hidden="true">
+          <!-- REPLACE with: <img src="/assets/images/team/cto.jpg" alt="CTO Name" style="width:88px;height:88px;border-radius:50%;object-fit:cover;"> -->
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="8" r="4"/>
             <path d="M4 21 C4 16.5 7.5 14 12 14 C16.5 14 20 16.5 20 21"/>
           </svg>
         </div>
-        <div class="leader-name">Co-Founder &amp; CTO</div>
+        <div class="leader-name">Co-Founder &amp; CTO</div><!-- REPLACE: real name -->
         <div class="leader-role">Chief Technology Officer</div>
         <p class="leader-bio">
           Leads AI, computer vision, and software architecture across
           all product lines, with a focus on real-time systems.
         </p>
+        <!-- CTO quote — replace text inside quotes with a real statement -->
+        <blockquote style="margin-top:16px;padding:14px 16px;border-left:2px solid var(--cyan);font-size:12px;color:var(--muted);font-style:italic;line-height:1.75;background:var(--surface3);">
+          "Every algorithm we deploy is engineered to be faster,
+          more reliable, and more accurate than what came before it."
+          <cite style="display:block;margin-top:10px;font-style:normal;font-family:var(--font-mono);font-size:10px;letter-spacing:1px;color:var(--dim);">
+            — Co-Founder &amp; CTO, Vayuron Advanced Systems
+          </cite>
+        </blockquote>
       </div>
-      <div class="leader-card">
-        <div class="leader-photo" aria-hidden="true">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 21 C4 16.5 7.5 14 12 14 C16.5 14 20 16.5 20 21"/>
-          </svg>
-        </div>
-        <div class="leader-name">Head of Engineering</div>
-        <div class="leader-role">VP, Advanced Engineering</div>
-        <p class="leader-bio">
-          Oversees composite manufacturing, CAD design, and aerospace
-          structural development from concept to deployment.
-        </p>
-      </div>
+
     </div>
 
-    <div class="reveal d3" style="text-align:center; margin-top:32px;">
-      <a class="footer-links" href="/team/leadership.html" style="font-family:var(--font-mono); font-size:11px; letter-spacing:2px; color:var(--muted); text-decoration:none;">
-        View Full Organisation →
-      </a>
+    <!-- "View Full Organisation" now links to the real organisation page -->
+    <div class="reveal d3" style="text-align:center; margin-top:40px;">
+      <a class="btn-outline" href="/team/organisation.html">View Full Organisation →</a>
     </div>
   </section>
 
@@ -430,6 +456,8 @@
     </div>
   </section>
 
+  </main>
+
   <div id="footer-root"></div>
 
   <script src="/js/utils.js"></script>
@@ -441,6 +469,9 @@
   <script src="/js/scroll-reveal.js"></script>
   <script src="/js/smooth-scroll.js"></script>
   <script src="/js/main.js"></script>
+  <script src="/js/animations.js"></script>
 
+  <script src="/js/performance.js"></script>
+  <script src="/js/seo.js"></script>
 </body>
 </html>

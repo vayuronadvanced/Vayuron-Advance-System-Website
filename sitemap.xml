@@ -65,4 +65,22 @@
     /legal/*.html, /careers/*.html, etc.
   -->
 
+  <!-- Phase 5 — Corporate pages -->
+  <url><loc>https://www.vayuron.in/pages/careers.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.vayuron.in/pages/gallery.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.vayuron.in/pages/downloads.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.vayuron.in/careers/jobs.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.vayuron.in/careers/internships.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.vayuron.in/careers/apply.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.vayuron.in/news/index.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.vayuron.in/team/leadership.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.vayuron.in/research/publications.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.vayuron.in/research/innovation.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
+  <!-- Legal -->
+  <url><loc>https://www.vayuron.in/legal/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.vayuron.in/legal/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.vayuron.in/legal/cookies.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.vayuron.in/legal/security.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
 </urlset>

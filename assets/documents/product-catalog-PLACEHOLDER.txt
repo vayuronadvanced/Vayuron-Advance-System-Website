@@ -1,0 +1,2 @@
+Replace this with the real product-catalog.pdf
+Place the PDF file at: assets/documents/product-catalog.pdf

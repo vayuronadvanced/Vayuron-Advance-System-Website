@@ -1,0 +1,2 @@
+Replace this with the real software-systems-brochure.pdf
+Place the PDF file at: assets/documents/software-systems-brochure.pdf

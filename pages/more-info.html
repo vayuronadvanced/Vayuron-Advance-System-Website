@@ -4,18 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Company Information — Vayuron Advanced Systems</title>
-  <meta name="description" content="Complete company profile for Vayuron Advanced Systems: certifications, infrastructure, partners, registered details, and future roadmap." />
+  <meta name="description" content="Complete Vayuron Advanced Systems company profile: registered details, certifications, infrastructure, partners, and future roadmap." />
   <meta property="og:title" content="Vayuron Advanced Systems — Company Information" />
   <meta property="og:description" content="Certifications, infrastructure, partners, and future roadmap." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.vayuron.in/assets/images/company/og-cover.jpg" />
+  <meta property="og:site_name" content="Vayuron Advanced Systems" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@VayuronSystems" />
   <link rel="canonical" href="/pages/more-info.html" />
   <link rel="icon" href="/assets/logos/favicon.ico" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#00d4ff" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/accessibility.css" />
   <link rel="stylesheet" href="/css/variables.css" />
   <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/navbar.css" />
@@ -176,12 +183,24 @@
 </head>
 <body>
 
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-to-content" href="#main-content">Skip to main content</a>
+
   <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen" aria-hidden="true" role="status">
+    <div class="loading-logo"><div class="loading-logo-mark"></div><span class="loading-logo-text">VAYU<em>RON</em></span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+    <span class="loading-text">Initialising Systems</span>
+  </div>
   <div id="navbar-root"></div>
 
   <!-- ═══════════════════════════════════════
        PAGE BANNER
        ═══════════════════════════════════════ -->
+  <main id="main-content" style="display:contents">
+
   <section class="page-banner" aria-label="Company Information">
     <div class="page-banner-bg" aria-hidden="true"></div>
     <div class="page-banner-grid" aria-hidden="true"></div>
@@ -393,6 +412,8 @@
     </div>
   </section>
 
+  </main>
+
   <div id="footer-root"></div>
 
   <script src="/js/utils.js"></script>
@@ -404,6 +425,9 @@
   <script src="/js/scroll-reveal.js"></script>
   <script src="/js/smooth-scroll.js"></script>
   <script src="/js/main.js"></script>
+  <script src="/js/animations.js"></script>
 
+  <script src="/js/performance.js"></script>
+  <script src="/js/seo.js"></script>
 </body>
 </html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organisation — Vayuron Advanced Systems</title>
+  <meta name="description" content="Vayuron Advanced Systems organisational structure — leadership, divisions, and teams across UAV, AI, software, and engineering." />
+  <link rel="canonical" href="/team/organisation.html" />
+  <link rel="icon" href="/assets/logos/favicon.ico" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#00d4ff" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/accessibility.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/corporate.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/page-header.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+
+  <style>
+    /* ── Org chart layout ────────────────────── */
+    .org-wrap { max-width: 1100px; margin: 0 auto; }
+
+    /* Top level — CEO / CTO row */
+    .org-level {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    /* Connector lines between levels */
+    .org-connector {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+    .org-connector::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: var(--border2);
+    }
+
+    /* Horizontal branch line above division cards */
+    .org-branch {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+    .org-branch-line {
+      height: 1px;
+      width: 70%;
+      background: var(--border2);
+      position: relative;
+      margin-top: 0;
+    }
+
+    /* Node (person card) */
+    .org-node {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 20px 24px;
+      text-align: center;
+      min-width: 180px;
+      max-width: 220px;
+      flex: 1;
+      transition: border-color var(--transition-base);
+    }
+    .org-node:hover { border-color: var(--cyan); }
+    .org-node.top-node {
+      border-color: var(--cyan);
+      background: var(--surface3);
+    }
+    .org-node-role {
+      font-family: var(--font-mono);
+      font-size: 9px; letter-spacing: 2px;
+      color: var(--cyan); text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .org-node-name {
+      font-family: var(--font-ui);
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--white); margin-bottom: 4px;
+    }
+    .org-node-title {
+      font-size: 11.5px; color: var(--muted); line-height: 1.5;
+    }
+
+    /* Division row */
+    .org-divisions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 40px;
+    }
+    .org-division {
+      background: var(--surface);
+      padding: 28px 24px;
+    }
+    .org-division-title {
+      font-family: var(--font-ui);
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .org-division ul { list-style: none; }
+    .org-division ul li {
+      font-size: 12px; color: var(--muted);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .org-division ul li:last-child { border-bottom: none; }
+    .org-division ul li::before {
+      content: '›'; color: var(--cyan); font-size: 13px;
+    }
+
+    /* Support functions row */
+    .org-support {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 1px;
+    }
+    .org-support-card {
+      background: var(--surface2);
+      padding: 20px 24px;
+    }
+    .org-support-card h4 {
+      font-family: var(--font-mono);
+      font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted); margin-bottom: 8px;
+    }
+    .org-support-card p {
+      font-size: 12px; color: var(--dim); line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .org-divisions { grid-template-columns: repeat(2, 1fr); }
+      .org-support   { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .org-divisions { grid-template-columns: 1fr; }
+      .org-support   { grid-template-columns: 1fr; }
+      .org-node { min-width: 140px; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-to-content" href="#main-content">Skip to main content</a>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen" aria-hidden="true" role="status">
+    <div class="loading-logo"><div class="loading-logo-mark"></div><span class="loading-logo-text">VAYU<em>RON</em></span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+    <span class="loading-text">Initialising Systems</span>
+  </div>
+
+  <div id="navbar-root"></div>
+
+  <!-- ═══════════════════════════════════════
+       PAGE BANNER
+       ═══════════════════════════════════════ -->
+  <main id="main-content" style="display:contents">
+
+  <section class="page-banner" aria-label="Organisation">
+    <div class="page-banner-bg" aria-hidden="true"></div>
+    <div class="page-banner-grid" aria-hidden="true"></div>
+    <div class="page-banner-inner">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="/pages/about.html">About</a>
+        <span class="sep">/</span>
+        <span class="current">Organisation</span>
+      </nav>
+      <a class="back-link" href="/pages/about.html">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to About
+      </a>
+      <div class="section-label reveal">Our Structure</div>
+      <h1 class="page-title reveal d1">ORGANISATION<br><span class="hl">STRUCTURE</span></h1>
+      <p class="page-subtitle reveal d2">
+        How Vayuron's teams are organised across engineering, artificial
+        intelligence, software, and operations — from leadership to delivery.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ORG CHART
+       ═══════════════════════════════════════ -->
+  <section class="page-section" aria-label="Organisation Chart">
+    <div class="org-wrap">
+
+      <div class="section-wrap" style="margin-bottom:48px;">
+        <div class="section-label reveal">Leadership</div>
+        <h2 class="stitle reveal d1">EXECUTIVE<br>LEADERSHIP</h2>
+      </div>
+
+      <!-- Level 1: CEO + CTO -->
+      <div class="org-level reveal d2">
+        <div class="org-node top-node">
+          <div class="org-node-role">Founder</div>
+          <div class="org-node-name">CEO</div><!-- REPLACE: real name -->
+          <div class="org-node-title">Chief Executive Officer</div>
+        </div>
+        <div class="org-node top-node">
+          <div class="org-node-role">Co-Founder</div>
+          <div class="org-node-name">CTO</div><!-- REPLACE: real name -->
+          <div class="org-node-title">Chief Technology Officer</div>
+        </div>
+      </div>
+
+      <!-- Connector -->
+      <div class="org-connector" aria-hidden="true"></div>
+
+      <!-- Level 2: Division heads (add/remove as needed) -->
+      <div class="org-level reveal d3" style="gap:16px;">
+        <div class="org-node">
+          <div class="org-node-role">Division Head</div>
+          <div class="org-node-name">UAV Lead</div><!-- REPLACE -->
+          <div class="org-node-title">Head, UAV Systems</div>
+        </div>
+        <div class="org-node">
+          <div class="org-node-role">Division Head</div>
+          <div class="org-node-name">AI Lead</div><!-- REPLACE -->
+          <div class="org-node-title">Head, Artificial Intelligence</div>
+        </div>
+        <div class="org-node">
+          <div class="org-node-role">Division Head</div>
+          <div class="org-node-name">Software Lead</div><!-- REPLACE -->
+          <div class="org-node-title">Head, Software Systems</div>
+        </div>
+        <div class="org-node">
+          <div class="org-node-role">Division Head</div>
+          <div class="org-node-name">Engg. Lead</div><!-- REPLACE -->
+          <div class="org-node-title">Head, Advanced Engineering</div>
+        </div>
+      </div>
+
+      <!-- Division breakdown -->
+      <div class="org-divisions reveal d2" style="margin-top:48px;">
+
+        <div class="org-division">
+          <div class="org-division-title">UAV Systems</div>
+          <ul>
+            <li>Fixed-Wing Design</li>
+            <li>VTOL Design</li>
+            <li>Avionics &amp; Flight Control</li>
+            <li>Payload Integration</li>
+            <li>Flight Operations</li>
+          </ul>
+        </div>
+
+        <div class="org-division">
+          <div class="org-division-title">Artificial Intelligence</div>
+          <ul>
+            <li>Computer Vision</li>
+            <li>Object Detection</li>
+            <li>Tracking Systems</li>
+            <li>Data Analytics</li>
+            <li>Autonomous Systems</li>
+          </ul>
+        </div>
+
+        <div class="org-division">
+          <div class="org-division-title">Software Systems</div>
+          <ul>
+            <li>Web Platforms</li>
+            <li>Operational Dashboards</li>
+            <li>Cloud Infrastructure</li>
+            <li>Data Platforms</li>
+            <li>DevOps &amp; Security</li>
+          </ul>
+        </div>
+
+        <div class="org-division">
+          <div class="org-division-title">Advanced Engineering</div>
+          <ul>
+            <li>CAD &amp; Structural Design</li>
+            <li>Composite Manufacturing</li>
+            <li>Prototyping</li>
+            <li>Testing &amp; Validation</li>
+            <li>Product Development</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Support functions -->
+      <div class="section-wrap" style="margin:64px 0 24px;">
+        <div class="section-label reveal">Support Functions</div>
+        <h2 class="stitle reveal d1" style="font-size:clamp(28px,3vw,44px);">ENABLING<br>TEAMS</h2>
+      </div>
+      <div class="org-support reveal d2">
+        <div class="org-support-card">
+          <h4>Business Development</h4>
+          <p>Government relations, defence procurement, partnerships, and market expansion.</p>
+        </div>
+        <div class="org-support-card">
+          <h4>Quality &amp; Compliance</h4>
+          <p>ISO compliance, DGCA certification, and regulatory standards across all product lines.</p>
+        </div>
+        <div class="org-support-card">
+          <h4>Finance &amp; Administration</h4>
+          <p>Finance, HR, legal, facilities, and corporate governance.</p>
+        </div>
+      </div>
+
+      <!-- Advisory board note -->
+      <div class="future-zone reveal d3" style="margin-top:48px;">
+        <p>ADVISORY BOARD PROFILES — <a href="/team/advisory-board.html" style="color:var(--cyan);text-decoration:none;">View Advisory Board →</a></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner" aria-label="Join the team">
+    <div class="section-label reveal" style="justify-content:center">Join Us</div>
+    <h2 class="stitle reveal d1">WORK AT<br>VAYURON</h2>
+    <p class="reveal d2">
+      We are building India's most capable indigenous defence-tech team.
+      See our open positions and apply today.
+    </p>
+    <div class="cta-actions reveal d3">
+      <a class="btn-primary" href="/careers/jobs.html">View Open Positions</a>
+      <a class="btn-outline" href="/pages/about.html">Back to About</a>
+    </div>
+  </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+  <script src="/js/nav-active.js"></script>
+  <script src="/js/mobile-menu.js"></script>
+  <script src="/js/cursor.js"></script>
+  <script src="/js/scroll-reveal.js"></script>
+  <script src="/js/smooth-scroll.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/animations.js"></script>
+
+  <script src="/js/performance.js"></script>
+  <script src="/js/seo.js"></script>
+</body>
+</html>

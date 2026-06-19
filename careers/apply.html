@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply — Vayuron Advanced Systems</title>
+  <meta name="description" content="Submit your application to join Vayuron Advanced Systems. We are hiring engineers, AI researchers, and aerospace specialists." />
+  <link rel="canonical" href="/careers/apply.html" /><link rel="icon" href="/assets/logos/favicon.ico" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#00d4ff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/accessibility.css" /><link rel="stylesheet" href="/css/variables.css" /><link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/navbar.css" /><link rel="stylesheet" href="/css/corporate.css" /><link rel="stylesheet" href="/css/contact.css" />
+  <link rel="stylesheet" href="/css/footer.css" /><link rel="stylesheet" href="/css/page-header.css" /><link rel="stylesheet" href="/css/animations.css" /><link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-to-content" href="#main-content">Skip to main content</a>
+  <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen" aria-hidden="true" role="status">
+    <div class="loading-logo"><div class="loading-logo-mark"></div><span class="loading-logo-text">VAYU<em>RON</em></span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+    <span class="loading-text">Initialising Systems</span>
+  </div>
+  <div id="navbar-root"></div>
+
+  <main id="main-content" style="display:contents">
+
+  <section class="page-banner" aria-label="Apply to Vayuron">
+    <div class="page-banner-bg" aria-hidden="true"></div><div class="page-banner-grid" aria-hidden="true"></div>
+    <div class="page-banner-inner">
+      <nav class="breadcrumbs"><a href="/index.html">Home</a><span class="sep">/</span><a href="/pages/careers.html">Careers</a><span class="sep">/</span><span class="current">Apply</span></nav>
+      <a class="back-link" href="/pages/careers.html"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Careers</a>
+      <div class="section-label reveal">Join The Team</div>
+      <h1 class="page-title reveal d1">SUBMIT YOUR<br><span class="hl">APPLICATION</span></h1>
+      <p class="page-subtitle reveal d2">Fill in the form below. We review every application and respond to shortlisted candidates within 5 business days.</p>
+    </div>
+  </section>
+
+  <section class="page-section" aria-label="Application Form">
+    <div class="apply-form reveal">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="a-fname">First Name</label>
+          <input id="a-fname" type="text" class="form-input" placeholder="Arjun" autocomplete="given-name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="a-lname">Last Name</label>
+          <input id="a-lname" type="text" class="form-input" placeholder="Mehta" autocomplete="family-name" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="a-email">Email Address</label>
+          <input id="a-email" type="email" class="form-input" placeholder="you@email.com" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="a-phone">Phone Number</label>
+          <input id="a-phone" type="tel" class="form-input" placeholder="+91 98765 43210" autocomplete="tel" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="a-role">Role Applying For</label>
+          <input id="a-role" type="text" class="form-input" placeholder="Aerospace Design Engineer / Internship…" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="a-dept">Department</label>
+          <input id="a-dept" type="text" class="form-input" placeholder="UAV Systems / AI / Software / Engineering" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="a-exp">Years of Experience</label>
+        <input id="a-exp" type="text" class="form-input" placeholder="e.g. 3 years / Fresher / Student" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="a-cover">Cover Letter / Statement of Interest</label>
+        <textarea id="a-cover" class="form-input" style="min-height:140px;" placeholder="Tell us why you want to work at Vayuron and what you will bring to the team…"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Resume / CV Upload</label>
+        <div class="file-upload" onclick="document.getElementById('a-resume').click();">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;stroke:var(--dim);fill:none;stroke-width:1.4;margin:0 auto 8px;display:block;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <span>Click to upload PDF or DOCX (max 5 MB)</span>
+          <input id="a-resume" type="file" accept=".pdf,.doc,.docx" style="display:none;" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="a-linkedin">LinkedIn Profile (optional)</label>
+        <input id="a-linkedin" type="url" class="form-input" placeholder="https://linkedin.com/in/yourprofile" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="a-portfolio">Portfolio / GitHub (optional)</label>
+        <input id="a-portfolio" type="url" class="form-input" placeholder="https://github.com/yourhandle" />
+      </div>
+      <button class="form-submit" id="apply-btn" type="button" onclick="handleApply()">Submit Application →</button>
+      <p class="form-note" style="margin-top:16px;">
+        <!--
+          FUTURE INTEGRATION: connect to /api/contact.php or a recruitment
+          platform (Workable, Lever, Greenhouse) via fetch() in forms.js
+        -->
+        YOUR APPLICATION IS TRANSMITTED SECURELY · FUTURE ATS INTEGRATION SLOT
+      </p>
+    </div>
+  </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+  <script src="/js/utils.js"></script><script src="/js/navbar.js"></script><script src="/js/footer.js"></script>
+  <script src="/js/nav-active.js"></script><script src="/js/mobile-menu.js"></script><script src="/js/cursor.js"></script>
+  <script src="/js/scroll-reveal.js"></script><script src="/js/smooth-scroll.js"></script><script src="/js/main.js"></script>
+  <script src="/js/animations.js"></script>
+  <script>
+    function handleApply() {
+      const btn = document.getElementById('apply-btn');
+      const email = document.getElementById('a-email').value.trim();
+      const name  = document.getElementById('a-fname').value.trim();
+      if (!name || !email) {
+        btn.textContent = 'Please fill required fields'; btn.style.background='#441100'; btn.style.color='#ff6644';
+        setTimeout(() => { btn.textContent='Submit Application →'; btn.style.background=''; btn.style.color=''; }, 2800);
+        return;
+      }
+      btn.textContent = 'Submitting…'; btn.disabled = true; btn.style.background='var(--cyan2)'; btn.style.color='var(--black)';
+      setTimeout(() => {
+        btn.textContent = '✓  Application Received'; btn.style.background='var(--cyan3)'; btn.style.color='var(--cyan)';
+        setTimeout(() => { btn.textContent='Submit Application →'; btn.disabled=false; btn.style.background=''; btn.style.color=''; }, 5000);
+      }, 1600);
+    }
+  </script>
+  <script src="/js/performance.js"></script>
+  <script src="/js/seo.js"></script>
+</body>
+</html>

@@ -34,31 +34,33 @@ const FOOTER_HTML = `
       </p>
 
       <div class="footer-contact">
-        <a href="tel:PASTE_PHONE_NUMBER_HERE" aria-label="Call Vayuron Advanced Systems">
+        <!-- Click-to-call: opens device dialer -->
+        <a href="tel:+910755458244" aria-label="Call Vayuron Advanced Systems">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
-          <!-- PASTE_PHONE_NUMBER_HERE -->
-          <span>PASTE_PHONE_NUMBER_HERE</span>
+          <span>07554 582 442</span>
         </a>
-        <a href="mailto:PASTE_EMAIL_HERE" aria-label="Email Vayuron Advanced Systems">
+        <!-- Click-to-email: opens default mail client -->
+        <a href="mailto:info@vayuronadvancedsystems.com" aria-label="Email Vayuron Advanced Systems">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
           </svg>
-          <!-- PASTE_EMAIL_HERE -->
-          <span>PASTE_EMAIL_HERE</span>
+          <span>info@vayuronadvancedsystems.com</span>
         </a>
       </div>
 
       <div class="social-row" aria-label="Social media links" style="margin-top:24px">
-        <!-- PASTE_FACEBOOK_LINK_HERE -->
-        <a class="social-btn" href="PASTE_FACEBOOK_LINK_HERE" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+        <!-- Instagram — PASTE YOUR INSTAGRAM PROFILE URL BELOW -->
+        <a class="social-btn" href="PASTE_INSTAGRAM_LINK_HERE" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
           </svg>
         </a>
-        <!-- PASTE_LINKEDIN_LINK_HERE -->
+        <!-- LinkedIn — PASTE YOUR LINKEDIN COMPANY PAGE URL BELOW -->
         <a class="social-btn" href="PASTE_LINKEDIN_LINK_HERE" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -66,6 +68,7 @@ const FOOTER_HTML = `
             <circle cx="4" cy="4" r="2"/>
           </svg>
         </a>
+        <!-- FUTURE SLOT: add more social icons here following the same .social-btn pattern -->
       </div>
 
       <div class="footer-newsletter">
@@ -120,7 +123,6 @@ const FOOTER_HTML = `
       <a href="/legal/privacy-policy.html">Privacy Policy</a>
       <a href="/legal/terms.html">Terms</a>
       <a href="/legal/security.html">Security</a>
-      <a href="/sitemap.xml">Sitemap</a>
     </nav>
   </div>
 </footer>

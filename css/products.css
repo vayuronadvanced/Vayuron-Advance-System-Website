@@ -164,37 +164,82 @@
   .product-hero .media-placeholder { aspect-ratio: 4/3; }
 }
 
-/* ── Specifications table ──────────────────────────── */
+/* ── Specifications — visual card layout ───────────── */
 .spec-table {
   max-width: 1200px;
   margin: 0 auto;
-  border: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
 }
 .spec-row {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  border-bottom: 1px solid var(--border);
-}
-.spec-row:last-child { border-bottom: none; }
-.spec-label {
-  padding: 16px 24px;
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
   background: var(--surface);
-  border-right: 1px solid var(--border);
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+.spec-row::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+.spec-row:hover { background: var(--surface2); }
+.spec-row:hover::before { opacity: 1; }
+
+.spec-label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.spec-label::before {
+  content: '';
+  width: 4px; height: 4px;
+  background: var(--cyan);
+  transform: rotate(45deg);
+  flex-shrink: 0;
 }
 .spec-value {
-  padding: 16px 24px;
-  font-size: 13px;
-  color: var(--text);
-  background: var(--surface2);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--white);
+  line-height: 1.4;
 }
-@media (max-width: 768px) {
-  .spec-row { grid-template-columns: 1fr; }
-  .spec-label { border-right: none; border-bottom: 1px solid var(--border); }
+/* Wide row — spans all 3 columns (add class="spec-row wide" for notes) */
+.spec-row.wide {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+.spec-row.wide .spec-value {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+@media (max-width: 1024px) {
+  .spec-table { grid-template-columns: repeat(2, 1fr); }
+  .spec-row.wide { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .spec-table { grid-template-columns: 1fr; }
+  .spec-row.wide { flex-direction: column; align-items: flex-start; }
 }
 
 /* ── Feature list (icon + title + one-line desc) ───── */

@@ -1,0 +1,2 @@
+Replace this with the real advanced-engineering-brochure.pdf
+Place the PDF file at: assets/documents/advanced-engineering-brochure.pdf

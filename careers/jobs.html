@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Positions — Vayuron Advanced Systems</title>
+  <meta name="description" content="Current job openings at Vayuron Advanced Systems. Join India's leading indigenous defence-tech and aerospace company." />
+  <meta property="og:title" content="Open Positions — Vayuron Advanced Systems" />
+  <meta property="og:description" content="We are hiring engineers, AI researchers, and aerospace specialists." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.vayuron.in/assets/images/company/og-cover.jpg" />
+  <meta property="og:site_name" content="Vayuron Advanced Systems" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@VayuronSystems" />
+  <link rel="canonical" href="/careers/jobs.html" />
+  <link rel="icon" href="/assets/logos/favicon.ico" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#00d4ff" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/accessibility.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/corporate.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/page-header.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+
+  <style>
+    /* Job listing card */
+    .job-list {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+    }
+    .job-card {
+      background: var(--surface);
+      padding: 28px 36px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      transition: background var(--transition-base);
+    }
+    .job-card:hover { background: var(--surface2); }
+    .job-dept {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+    .job-title {
+      font-family: var(--font-ui);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .job-meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .job-meta span {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .job-meta span::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--border2);
+      transform: rotate(45deg);
+    }
+    .job-apply {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border: 1px solid var(--border2);
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: border-color var(--transition-base), color var(--transition-base);
+      flex-shrink: 0;
+    }
+    .job-apply:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    /* Filter bar */
+    .filter-bar {
+      max-width: 1200px;
+      margin: 0 auto 32px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .filter-chip {
+      padding: 8px 20px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+    .filter-chip.active,
+    .filter-chip:hover { border-color: var(--cyan); color: var(--cyan); background: var(--surface3); }
+
+    /* No openings notice */
+    .no-openings {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px;
+      border: 1px dashed var(--border2);
+      text-align: center;
+    }
+    .no-openings p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--dim);
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .job-card { grid-template-columns: 1fr; }
+      .job-apply { width: fit-content; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-to-content" href="#main-content">Skip to main content</a>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen" aria-hidden="true" role="status">
+    <div class="loading-logo"><div class="loading-logo-mark"></div><span class="loading-logo-text">VAYU<em>RON</em></span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+    <span class="loading-text">Initialising Systems</span>
+  </div>
+  <div id="navbar-root"></div>
+
+  <!-- ═══════════════════════════════════════
+       PAGE BANNER
+       ═══════════════════════════════════════ -->
+  <main id="main-content" style="display:contents">
+
+  <section class="page-banner" aria-label="Open Positions">
+    <div class="page-banner-bg" aria-hidden="true"></div>
+    <div class="page-banner-grid" aria-hidden="true"></div>
+    <div class="page-banner-inner">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="/pages/careers.html">Careers</a>
+        <span class="sep">/</span>
+        <span class="current">Open Positions</span>
+      </nav>
+      <a class="back-link" href="/pages/careers.html">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Careers Overview
+      </a>
+      <div class="section-label reveal">We Are Hiring</div>
+      <h1 class="page-title reveal d1">OPEN<br><span class="hl">POSITIONS</span></h1>
+      <p class="page-subtitle reveal d2">
+        Join India's leading indigenous defence-tech and aerospace company.
+        We are looking for engineers, researchers, and operators who
+        build things that matter.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       JOB LISTINGS
+       ═══════════════════════════════════════ -->
+  <section class="page-section" aria-label="Job Listings">
+
+    <!-- Filter bar -->
+    <div class="filter-bar reveal">
+      <div class="filter-chip active">All Departments</div>
+      <div class="filter-chip">UAV Engineering</div>
+      <div class="filter-chip">Artificial Intelligence</div>
+      <div class="filter-chip">Software</div>
+      <div class="filter-chip">Advanced Engineering</div>
+      <div class="filter-chip">Operations</div>
+    </div>
+
+    <!--
+      PLACEHOLDER JOB LISTINGS
+      Replace with real open positions as they become available.
+      Add or remove .job-card blocks as needed.
+      To show "no current openings", remove all .job-card blocks
+      and show the .no-openings block instead.
+    -->
+    <div class="job-list reveal d2">
+
+      <div class="job-card">
+        <div>
+          <div class="job-dept">UAV Engineering</div>
+          <div class="job-title">Senior UAV Systems Engineer</div>
+          <div class="job-meta">
+            <span>Full-Time</span>
+            <span>Onsite — India</span>
+            <span>5+ Years Experience</span>
+          </div>
+        </div>
+        <a class="job-apply" href="/careers/apply.html">Apply Now →</a>
+      </div>
+
+      <div class="job-card">
+        <div>
+          <div class="job-dept">Artificial Intelligence</div>
+          <div class="job-title">Computer Vision Engineer</div>
+          <div class="job-meta">
+            <span>Full-Time</span>
+            <span>Onsite — India</span>
+            <span>3+ Years Experience</span>
+          </div>
+        </div>
+        <a class="job-apply" href="/careers/apply.html">Apply Now →</a>
+      </div>
+
+      <div class="job-card">
+        <div>
+          <div class="job-dept">Software</div>
+          <div class="job-title">Full-Stack Developer (Defence Platforms)</div>
+          <div class="job-meta">
+            <span>Full-Time</span>
+            <span>Onsite / Hybrid</span>
+            <span>3+ Years Experience</span>
+          </div>
+        </div>
+        <a class="job-apply" href="/careers/apply.html">Apply Now →</a>
+      </div>
+
+      <div class="job-card">
+        <div>
+          <div class="job-dept">Advanced Engineering</div>
+          <div class="job-title">Composite Structures Engineer</div>
+          <div class="job-meta">
+            <span>Full-Time</span>
+            <span>Onsite — India</span>
+            <span>4+ Years Experience</span>
+          </div>
+        </div>
+        <a class="job-apply" href="/careers/apply.html">Apply Now →</a>
+      </div>
+
+      <div class="job-card">
+        <div>
+          <div class="job-dept">Artificial Intelligence</div>
+          <div class="job-title">AI/ML Research Engineer</div>
+          <div class="job-meta">
+            <span>Full-Time</span>
+            <span>Onsite — India</span>
+            <span>2+ Years Experience</span>
+          </div>
+        </div>
+        <a class="job-apply" href="/careers/apply.html">Apply Now →</a>
+      </div>
+
+      <div class="job-card">
+        <div>
+          <div class="job-dept">Operations</div>
+          <div class="job-title">UAV Pilot &amp; Mission Coordinator</div>
+          <div class="job-meta">
+            <span>Full-Time</span>
+            <span>Field-Based — India</span>
+            <span>DGCA Remote Pilot Licence Required</span>
+          </div>
+        </div>
+        <a class="job-apply" href="/careers/apply.html">Apply Now →</a>
+      </div>
+
+    </div>
+
+    <!-- Uncomment the block below and remove .job-list when no positions are open -->
+    <!--
+    <div class="no-openings">
+      <p>No open positions at this time — check back soon or submit a speculative application below.</p>
+    </div>
+    -->
+
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA
+       ═══════════════════════════════════════ -->
+  <section class="cta-banner" aria-label="Speculative Application">
+    <div class="section-label reveal" style="justify-content:center">Don't See Your Role?</div>
+    <h2 class="stitle reveal d1">SUBMIT A<br>SPECULATIVE APPLICATION</h2>
+    <p class="reveal d2">
+      We are always interested in exceptional talent. Send us your CV and
+      a note on what you can contribute.
+    </p>
+    <div class="cta-actions reveal d3">
+      <a class="btn-primary" href="/careers/apply.html">Apply Now</a>
+      <a class="btn-outline" href="/careers/internships.html">View Internships</a>
+    </div>
+  </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/footer.js"></script>
+  <script src="/js/nav-active.js"></script>
+  <script src="/js/mobile-menu.js"></script>
+  <script src="/js/cursor.js"></script>
+  <script src="/js/scroll-reveal.js"></script>
+  <script src="/js/smooth-scroll.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/animations.js"></script>
+
+  <script src="/js/performance.js"></script>
+  <script src="/js/seo.js"></script>
+</body>
+</html>
