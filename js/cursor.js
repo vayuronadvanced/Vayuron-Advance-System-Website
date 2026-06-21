@@ -6,11 +6,37 @@
    rebindCursorTargets() is called again by navbar.js after the
    navbar is injected, so newly-added .nav-cta / .social-btn /
    nav links also get the hover effect.
+
+   Position is driven via transform: translate3d(), batched on
+   requestAnimationFrame, so the dot tracks the real cursor with
+   zero layout-thrash lag instead of using left/top.
    ============================================================ */
 
 'use strict';
 
+let cursorX = -100;
+let cursorY = -100;
+let cursorScale = 1;
+let cursorRafScheduled = false;
+
+function renderCursorDot() {
+  const dot = document.getElementById('cursor-dot');
+  if (!dot) return;
+  dot.style.transform =
+    `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%) scale(${cursorScale})`;
+  cursorRafScheduled = false;
+}
+
+function scheduleCursorRender() {
+  if (cursorRafScheduled) return;
+  cursorRafScheduled = true;
+  requestAnimationFrame(renderCursorDot);
+}
+
 function initCursor() {
+  // Custom cursor dot disabled — remove this early return to re-enable.
+  return;
+
   const dot = document.getElementById('cursor-dot');
   if (!dot) return;
 
@@ -21,9 +47,19 @@ function initCursor() {
   }
 
   document.addEventListener('mousemove', e => {
-    dot.style.left = e.clientX + 'px';
-    dot.style.top  = e.clientY + 'px';
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+    scheduleCursorRender();
   });
+
+  // Mouse-wheel scrolling doesn't fire mousemove (the pointer hasn't
+  // physically moved), but WheelEvent still reports clientX/clientY —
+  // use it to keep the dot attached to the cursor during scroll.
+  document.addEventListener('wheel', e => {
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+    scheduleCursorRender();
+  }, { passive: true });
 
   rebindCursorTargets();
 }
@@ -45,12 +81,14 @@ function rebindCursorTargets() {
     el.dataset.cursorBound = 'true';
 
     el.addEventListener('mouseenter', () => {
-      dot.style.transform = 'translate(-50%, -50%) scale(3)';
-      dot.style.opacity   = '0.35';
+      cursorScale = 3;
+      dot.style.opacity = '0.35';
+      scheduleCursorRender();
     });
     el.addEventListener('mouseleave', () => {
-      dot.style.transform = 'translate(-50%, -50%) scale(1)';
-      dot.style.opacity   = '1';
+      cursorScale = 1;
+      dot.style.opacity = '1';
+      scheduleCursorRender();
     });
   });
 }

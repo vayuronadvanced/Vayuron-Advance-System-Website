@@ -18,9 +18,8 @@
 
 const NAVBAR_HTML = `
 <nav id="navbar" role="banner">
-  <a class="logo" href="/pages/more-info.html" aria-label="Vayuron Advanced Systems — More Information">
-    <div class="logo-mark" aria-hidden="true"></div>
-    <span class="logo-text">VAYU<em>RON</em></span>
+  <a class="logo" href="/index.html" aria-label="Vayuron Advanced Systems — Home">
+  <img src="/assets/logos/VayuronAdvancedSystems.jpeg" alt="Vayuron Advanced Systems" class="logo-image">
   </a>
 
   <div class="nav-links" role="navigation" aria-label="Primary Navigation">

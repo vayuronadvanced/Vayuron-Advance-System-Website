@@ -29,17 +29,17 @@ const FOOTER_HTML = `
         <span class="logo-text">VAYU<em>RON</em></span>
       </a>
       <p class="footer-tagline">
-        Engineering Indigenous Innovation for Defence, Industry, and Critical Infrastructure.
+        Engineering Intelligent Systems for Mission-Critical Operations.
         Indigenous. Intelligent. Mission-Ready.
       </p>
 
       <div class="footer-contact">
         <!-- Click-to-call: opens device dialer -->
-        <a href="tel:+910755458244" aria-label="Call Vayuron Advanced Systems">
+        <a href="tel:07554582442" aria-label="Call Vayuron Advanced Systems">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
-          <span>07554 582 442</span>
+          <span>07554582442</span>
         </a>
         <!-- Click-to-email: opens default mail client -->
         <a href="mailto:info@vayuronadvancedsystems.com" aria-label="Email Vayuron Advanced Systems">
@@ -53,7 +53,7 @@ const FOOTER_HTML = `
 
       <div class="social-row" aria-label="Social media links" style="margin-top:24px">
         <!-- Instagram — PASTE YOUR INSTAGRAM PROFILE URL BELOW -->
-        <a class="social-btn" href="PASTE_INSTAGRAM_LINK_HERE" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+        <a class="social-btn" href="https://www.instagram.com/vayuron.advanced.systms?igsh=MWF4ZWRzdW53cWd0Nw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -61,11 +61,25 @@ const FOOTER_HTML = `
           </svg>
         </a>
         <!-- LinkedIn — PASTE YOUR LINKEDIN COMPANY PAGE URL BELOW -->
-        <a class="social-btn" href="PASTE_LINKEDIN_LINK_HERE" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+        <!-- LinkedIn — PASTE YOUR LINKEDIN COMPANY PAGE URL BELOW -->
+        <a class="social-btn" href="https://www.linkedin.com/company/vaayu-robotics/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
             <rect x="2" y="9" width="4" height="12"/>
             <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <!-- X (Twitter) — PASTE YOUR X PROFILE URL BELOW -->
+        <a class="social-btn" href="PASTE_X_LINK_HERE" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z"/>
+          </svg>
+        </a>
+        <!-- YouTube — PASTE YOUR YOUTUBE CHANNEL URL BELOW -->
+        <a class="social-btn" href="PASTE_YOUTUBE_LINK_HERE" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-7.6.42a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 2 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 4.4 19c.72.42 7.6.42 7.6.42s6.88 0 7.6-.42a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/>
+            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
           </svg>
         </a>
         <!-- FUTURE SLOT: add more social icons here following the same .social-btn pattern -->
@@ -151,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
       /* ─────────────────────────────────────────────
          FUTURE INTEGRATION: send email to your
          newsletter provider / api/newsletter.php here.
-         ───────────────────────────────────────────── */
+         ─────────────────────────────────────────────*/
     });
   }
 });

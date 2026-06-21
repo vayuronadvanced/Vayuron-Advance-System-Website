@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-top: 74px;
 }
 
 /* ── Backgrounds ───────────────────────────────────── */
@@ -103,6 +104,16 @@
   letter-spacing: 2.5px;
   color: var(--muted);
   text-transform: uppercase;
+}
+
+.hero-tagline {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  animation: fadeUp 0.8s 0.05s ease both;
 }
 
 .hero-h1 {
