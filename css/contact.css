@@ -157,3 +157,47 @@ textarea.form-input {
   border-top: 1px solid var(--border);
   padding-top: 14px;
 }
+
+#form-status {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--cyan);
+  min-height: 20px;
+}
+
+#form-status.error {
+  color: #ff6644;
+}
+
+#form-status.success {
+  color: var(--cyan);
+}
+
+.inquiry-info-box {
+  margin-top: 20px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.inquiry-info-box h4 {
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+
+.inquiry-info-box ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.inquiry-info-box li {
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}

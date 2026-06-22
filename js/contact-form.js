@@ -20,46 +20,69 @@ function initContactForm() {
 }
 
 function handleSubmit() {
-  const btn   = document.getElementById('submit-btn');
+
+  const btn = document.getElementById('submit-btn');
+
   const name  = document.getElementById('f-name')?.value.trim()  ?? '';
   const email = document.getElementById('f-email')?.value.trim() ?? '';
+  const phone = document.getElementById('f-phone')?.value.trim() ?? '';
+  const org   = document.getElementById('f-org')?.value.trim()   ?? '';
+  const type  = document.getElementById('f-type')?.value.trim()  ?? '';
+  const msg   = document.getElementById('f-msg')?.value.trim()   ?? '';
 
-  if (!name || !email) {
-    setButtonState(btn, 'error', 'Fill in Name & Email');
+  if (!name || !email || !phone || !type || !msg) {
+    setButtonState(btn, 'error', 'Please Complete Form');
     setTimeout(() => setButtonState(btn, 'default', 'Send Inquiry →'), 2800);
     return;
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   if (!emailRegex.test(email)) {
-    setButtonState(btn, 'error', 'Invalid email address');
+    setButtonState(btn, 'error', 'Invalid Email');
     setTimeout(() => setButtonState(btn, 'default', 'Send Inquiry →'), 2800);
     return;
   }
 
-  setButtonState(btn, 'loading', 'Transmitting…');
+  setButtonState(btn, 'loading', 'Transmitting...');
 
-  /* ─────────────────────────────────────────────────────────
-     FUTURE INTEGRATION: replace setTimeout with:
+  const formData = new FormData();
 
-     fetch('/api/contact.php', {
-       method: 'POST',
-       headers: { 'Content-Type': 'application/json' },
-       body: JSON.stringify({ name, email, ... })
-     })
-     .then(r => r.json())
-     .then(data => { ... })
-     .catch(err => { ... });
-     ───────────────────────────────────────────────────────── */
+  formData.append('entry.1468460380', name);   // Full Name
+  formData.append('entry.1768174125', email);  // Email
+  formData.append('entry.564153782', phone);   // Phone
+  formData.append('entry.2068719704', org);    // Organization
+  formData.append('entry.1849896614', type);   // Nature of Inquiry
+  formData.append('entry.851126040', msg);     // Message
+  
+  fetch(
+    'https://docs.google.com/forms/d/e/1FAIpQLSewI60dNbbQqrlHw_Xh8Wa3b_desNWJkJuFoICh01gi6NFRnw/formResponse',
+    {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    }
+  )
+  .then(() => {
 
-  setTimeout(() => {
-    setButtonState(btn, 'success', '✓  Inquiry Dispatched');
+    setButtonState(btn, 'success', '✓ Inquiry Sent');
+
     clearForm();
 
     setTimeout(() => {
       setButtonState(btn, 'default', 'Send Inquiry →');
-    }, 4500);
-  }, 1600);
+    }, 4000);
+
+  })
+  .catch(() => {
+
+    setButtonState(btn, 'error', 'Submission Failed');
+
+    setTimeout(() => {
+      setButtonState(btn, 'default', 'Send Inquiry →');
+    }, 4000);
+
+  });
 }
 
 function setButtonState(btn, state, label) {
@@ -88,7 +111,7 @@ function setButtonState(btn, state, label) {
 }
 
 function clearForm() {
-  ['f-name', 'f-email', 'f-org', 'f-type', 'f-msg'].forEach(id => {
+  ['f-name', 'f-email', 'f-phone', 'f-org', 'f-type', 'f-msg'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });

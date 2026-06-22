@@ -193,3 +193,35 @@ footer {
   transition: color var(--transition-fast);
 }
 .footer-legal a:hover { color: var(--muted); }
+
+/* ===================================
+   Newsletter Subscription Status
+   =================================== */
+
+.newsletter-success {
+  background: #00b894 !important;
+  color: #ffffff !important;
+}
+
+.footer-newsletter-row button:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+/* Optional Status Message */
+
+.newsletter-status {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.newsletter-status.success {
+  color: #00d084;
+}
+
+.newsletter-status.error {
+  color: #ff6b6b;
+}

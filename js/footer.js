@@ -61,7 +61,6 @@ const FOOTER_HTML = `
           </svg>
         </a>
         <!-- LinkedIn — PASTE YOUR LINKEDIN COMPANY PAGE URL BELOW -->
-        <!-- LinkedIn — PASTE YOUR LINKEDIN COMPANY PAGE URL BELOW -->
         <a class="social-btn" href="https://www.linkedin.com/company/vaayu-robotics/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -75,13 +74,7 @@ const FOOTER_HTML = `
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z"/>
           </svg>
         </a>
-        <!-- YouTube — PASTE YOUR YOUTUBE CHANNEL URL BELOW -->
-        <a class="social-btn" href="PASTE_YOUTUBE_LINK_HERE" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-7.6.42a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 2 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 4.4 19c.72.42 7.6.42 7.6.42s6.88 0 7.6-.42a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/>
-            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
-          </svg>
-        </a>
+        
         <!-- FUTURE SLOT: add more social icons here following the same .social-btn pattern -->
       </div>
 
@@ -119,7 +112,7 @@ const FOOTER_HTML = `
     <div class="footer-col">
       <h4 class="footer-col-title">Company</h4>
       <ul class="footer-links">
-        <li><a href="/pages/about.html">About Vayuron</a></li>
+        <li><a href="/pages/about.html">About Vayuron Advanced Systems</a></li>
         <li><a href="/pages/more-info.html">More Information</a></li>
         <li><a href="/pages/technology.html">Technology</a></li>
         <li><a href="/pages/careers.html">Careers</a></li>
@@ -132,7 +125,7 @@ const FOOTER_HTML = `
   </div>
 
   <div class="footer-bottom section-wrap">
-    <p class="footer-copy">© 2025 Vayuron Advanced Systems Pvt. Ltd. · All Rights Reserved · Made in India 🇮🇳</p>
+    <p class="footer-copy">© 2025 Vayuron Advanced Systems· All Rights Reserved · Made in India 🇮🇳</p>
     <nav class="footer-legal" aria-label="Legal links">
       <a href="/legal/privacy-policy.html">Privacy Policy</a>
       <a href="/legal/terms.html">Terms</a>
@@ -152,20 +145,84 @@ document.addEventListener('DOMContentLoaded', () => {
     fixRelativePaths(root);
   }
 
-  // Newsletter signup placeholder handler
-  const form = root.querySelector('#newsletter-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('button');
-      const original = btn.textContent;
-      btn.textContent = 'Subscribed ✓';
-      setTimeout(() => { btn.textContent = original; form.reset(); }, 2500);
+  // Newsletter Subscription Handler
 
-      /* ─────────────────────────────────────────────
-         FUTURE INTEGRATION: send email to your
-         newsletter provider / api/newsletter.php here.
-         ─────────────────────────────────────────────*/
+const form = root.querySelector('#newsletter-form');
+
+if (form) {
+
+  form.addEventListener('submit', (e) => {
+
+    e.preventDefault();
+
+    const emailInput = form.querySelector('input[type="email"]');
+    const btn = form.querySelector('button');
+
+    const email = emailInput.value.trim();
+
+    if (!email) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    /*
+      GOOGLE FORM SUBMISSION
+
+      Replace:
+      GOOGLE_FORM_ACTION_URL
+
+      Replace:
+      entry.123456789
+
+      with your actual Google Form Entry ID
+    */
+
+    fetch('GOOGLE_FORM_ACTION_URL', {
+
+      method: 'POST',
+      mode: 'no-cors',
+
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+
+      body: new URLSearchParams({
+        'entry.123456789': email
+      })
+
+    })
+
+    .then(() => {
+
+      btn.textContent = 'Subscribed ✓';
+      btn.classList.add('newsletter-success');
+
+      emailInput.value = '';
+
+      setTimeout(() => {
+
+        btn.textContent = 'Subscribe';
+        btn.classList.remove('newsletter-success');
+        btn.disabled = false;
+
+      }, 3500);
+
+    })
+
+    .catch(() => {
+
+      btn.textContent = 'Try Again';
+
+      setTimeout(() => {
+
+        btn.textContent = 'Subscribe';
+        btn.disabled = false;
+
+      }, 3000);
+
     });
-  }
+
+  });
+
+}
 });
