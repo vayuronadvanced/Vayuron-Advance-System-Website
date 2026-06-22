@@ -7,11 +7,11 @@
   padding: var(--space-2xl) var(--section-px);
 }
 
-/* ── Layout ────────────────────────────────────────── */
+/* ── Layout ────────────────────────────────────────── Reduce Gap Between Columns */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 110px;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 70px;
   align-items: start;
 }
 
@@ -56,35 +56,6 @@
   flex-shrink: 0;
   border: 1px solid var(--cyan);
   transform: rotate(45deg);
-}
-
-/* ── Partner / cert placeholder ────────────────────── */
-.partner-zone {
-  border: 1px dashed var(--border2);
-  padding: 32px;
-  text-align: center;
-  margin-top: 44px;
-  position: relative;
-}
-.partner-zone::before {
-  content: 'PARTNER LOGOS · CERTIFICATIONS · ACCREDITATIONS — FUTURE INTEGRATION';
-  position: absolute;
-  top: -9px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--black);
-  padding: 0 14px;
-  font-family: var(--font-mono);
-  font-size: 8px;
-  letter-spacing: 2px;
-  color: var(--border2);
-  white-space: nowrap;
-}
-.partner-zone p {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--dim);
 }
 
 /* ── Form ──────────────────────────────────────────── */
@@ -200,4 +171,56 @@ textarea.form-input {
   font-size: 12px;
   color: var(--muted);
   line-height: 1.6;
+}
+
+/* ── Contact CTA Card ───────────────────────────────── Improve Right Card Width*/
+
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 48px;
+  position: sticky;
+  top: 120px;
+  max-width: 560px;
+}
+
+.contact-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 42px);
+  color: var(--white);
+  margin: 18px 0;
+  line-height: 1;
+}
+
+.contact-card-text {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 16px 32px;
+  background: var(--cyan);
+  color: var(--black);
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: var(--white);
+  transform: translateY(-2px);
+}
+
+.contact-btn-note {
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--dim);
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
 }
