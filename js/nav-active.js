@@ -2,7 +2,7 @@
    nav-active.js — Vayuron Advanced Systems
    Adds .active class (and aria-current="page") to the nav link
    matching the current page, in both the desktop nav and the
-   mobile menu.
+   mobile menu. 
 
    Active-state rules:
    ┌─────────────────────────────────┬──────────────────┐

@@ -13,7 +13,7 @@
      1. Edit NAVBAR_HTML below
      2. Mirror the same change in components/navbar.html for docs
    ============================================================ */
-
+ 
 'use strict';
 
 const NAVBAR_HTML = `

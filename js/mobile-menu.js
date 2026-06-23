@@ -4,13 +4,15 @@
 
    Exposes window.toggleMenu / window.closeMobile / window.openMobile
    for inline onclick handlers and for navbar.js / smooth-scroll.js.
-
+ 
    initMobileMenu() is called automatically on DOMContentLoaded,
    AND again by navbar.js after the navbar is injected (since the
    #ham / #mobile-menu elements don't exist until injection runs).
    ============================================================ */
 
 'use strict';
+
+console.log("MOBILE MENU LOADED");
 
 let menuOpen = false;
 
@@ -31,6 +33,7 @@ function initMobileMenu() {
 }
 
 function toggleMenu() {
+  console.log("Hamburger Clicked");
   menuOpen ? closeMobile() : openMobile();
 }
 

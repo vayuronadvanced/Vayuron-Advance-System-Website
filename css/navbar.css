@@ -2,7 +2,7 @@
    navbar.css — Vayuron Advanced Systems
    Fixed top navigation bar with scroll state
    ============================================================ */
-
+ 
 #navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -83,7 +83,7 @@
   background: var(--cyan);
   transition: width var(--transition-base);
 }
-.nav-links a:hover { color: #000000; }
+.nav-links a:hover { color: #fcfdfe; }
 .nav-links a:hover::after   { width: 100%; }
 
 /* ── Active page state ─────────────────────────────── */
@@ -211,4 +211,41 @@
 #mobile-menu .nav-cta {
   display: block;
   margin-top: 12px;
+}
+
+/* ── Mobile Responsive Navbar ─────────────────────── */
+@media (max-width: 992px) {
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  #navbar {
+    padding: 0 20px;
+  }
+
+  .logo-image {
+    height: 46px;
+  }
+}
+
+/* Fix Mobile Menu Layer */
+#mobile-menu {
+  z-index: 2000;
+}
+
+/* Ensure Hamburger stays clickable */
+.nav-hamburger {
+  position: relative;
+  z-index: 2100;
+}
+
+/* Make menu visible when opened */
+#mobile-menu.open {
+  display: flex !important;
 }
