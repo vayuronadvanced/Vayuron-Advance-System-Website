@@ -1,24 +1,26 @@
 /* ============================================================
    products.css — Vayuron Advanced Systems
    Styles for:
-     - pages/products.html (overview/gallery, product cards)
-     - products/*.html (individual product detail pages)
+     - pages/products.html  (overview / gallery, product cards)
+     - products/*.html      (individual product detail pages)
    ============================================================ */
 
+
 /* ════════════════════════════════════════════════════════
-   PRODUCTS OVERVIEW (pages/products.html)
+   PRODUCTS OVERVIEW  (pages/products.html)
    ════════════════════════════════════════════════════════ */
 
-/* ── Product card grid (2 columns, media-heavy) ────── */
+/* ── Product card grid — 2-column, equal cells ────────── */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
+  gap: 1px;                      /* hairline separator from background */
   background: var(--border);
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* ── Card shell ───────────────────────────────────────── */
 .product-card {
   background: var(--surface);
   display: flex;
@@ -29,31 +31,39 @@
 }
 .product-card:hover { background: var(--surface2); }
 
-/* Media area — image or video thumbnail */
+/* ── Media area — locked height, no shift ────────────── */
 .product-card-media {
   position: relative;
   width: 100%;
-  height: 380px;   /* same size for all 4 cards */
+  /* Aspect-ratio drives a perfectly equal height on every card
+     regardless of the image's native dimensions or container width.
+     380 / 600 ≈ 0.633 — tune the fraction to taste.              */
+  aspect-ratio: 600 / 380;
   overflow: hidden;
   background: var(--surface2);
   border-bottom: 1px solid var(--border);
+  /* Prevent any flex / grid child from stretching the area */
+  flex-shrink: 0;
 }
-.product-card-media img,
-.product-card-media video {
+
+/* Single canonical image class — replaces the four per-card variants */
+.product-card-img {
+  position: absolute;          /* fill the aspect-ratio box exactly   */
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, filter 0.4s ease;
   filter: grayscale(20%) brightness(0.85);
 }
-.product-card:hover .product-card-media img,
-.product-card:hover .product-card-media video {
+.product-card:hover .product-card-img {
   transform: scale(1.05);
   filter: grayscale(0%) brightness(1);
 }
 
-/* Placeholder media (until real assets are added) */
+/* Fallback pattern — shown when no <img> or <video> is present */
 .media-placeholder {
   width: 100%;
   height: 100%;
@@ -62,8 +72,11 @@
   justify-content: center;
   flex-direction: column;
   gap: 12px;
-  background:
-    repeating-linear-gradient(45deg, var(--surface2) 0 2px, var(--surface3) 2px 40px);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--surface2) 0 2px,
+    var(--surface3) 2px 40px
+  );
 }
 .media-placeholder svg {
   width: 40px; height: 40px;
@@ -75,7 +88,7 @@
   color: var(--dim); text-transform: uppercase;
 }
 
-/* Category tag overlay */
+/* Category tag overlay ─────────────────────────────────── */
 .product-card-tag {
   position: absolute;
   top: 16px; left: 16px;
@@ -88,12 +101,15 @@
   color: var(--cyan);
   text-transform: uppercase;
   backdrop-filter: blur(4px);
+  /* Keep tag above the image */
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* Card body */
+/* Card body ────────────────────────────────────────────── */
 .product-card-body {
   padding: 28px 32px;
-  flex: 1;
+  flex: 1;                    /* body grows to equalise card heights  */
   display: flex;
   flex-direction: column;
 }
@@ -122,6 +138,7 @@
   letter-spacing: 2px;
   color: var(--cyan);
   text-transform: uppercase;
+  margin-top: auto;
 }
 .product-card-link svg {
   width: 14px; height: 14px;
@@ -132,16 +149,15 @@
   transform: translateX(4px);
 }
 
-/* ── Sectors quick-grid (referenced from products page
-     so "Sectors" mega-menu has an anchor target #sectors) ── */
+/* Sectors quick-grid anchor ────────────────────────────── */
 #sectors-anchor { position: relative; top: -90px; }
 
 
 /* ════════════════════════════════════════════════════════
-   INDIVIDUAL PRODUCT PAGES (products/*.html)
+   INDIVIDUAL PRODUCT PAGES  (products/*.html)
    ════════════════════════════════════════════════════════ */
 
-/* ── Hero image/video banner ───────────────────────── */
+/* ── Hero image / video banner ──────────────────────── */
 .product-hero {
   position: relative;
   aspect-ratio: 21/9;
@@ -152,20 +168,17 @@
 }
 .product-hero img,
 .product-hero video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
 }
-.product-hero .media-placeholder {
-  aspect-ratio: 21/9;
-}
+.product-hero .media-placeholder { aspect-ratio: 21/9; }
+
 @media (max-width: 768px) {
-  .product-hero { aspect-ratio: 4/3; }
+  .product-hero               { aspect-ratio: 4/3; }
   .product-hero .media-placeholder { aspect-ratio: 4/3; }
 }
 
-/* ── Specifications — visual card layout ───────────── */
+/* ── Specifications — 3-column visual card layout ──── */
 .spec-table {
   max-width: 1200px;
   margin: 0 auto;
@@ -193,8 +206,8 @@
   opacity: 0;
   transition: opacity var(--transition-base);
 }
-.spec-row:hover { background: var(--surface2); }
-.spec-row:hover::before { opacity: 1; }
+.spec-row:hover               { background: var(--surface2); }
+.spec-row:hover::before       { opacity: 1; }
 
 .spec-label {
   font-family: var(--font-mono);
@@ -221,7 +234,8 @@
   color: var(--white);
   line-height: 1.4;
 }
-/* Wide row — spans all 3 columns (add class="spec-row wide" for notes) */
+
+/* Wide row — spans all 3 columns */
 .spec-row.wide {
   grid-column: 1 / -1;
   flex-direction: row;
@@ -235,15 +249,15 @@
 }
 
 @media (max-width: 1024px) {
-  .spec-table { grid-template-columns: repeat(2, 1fr); }
-  .spec-row.wide { grid-column: 1 / -1; }
+  .spec-table               { grid-template-columns: repeat(2, 1fr); }
+  .spec-row.wide            { grid-column: 1 / -1; }
 }
 @media (max-width: 640px) {
-  .spec-table { grid-template-columns: 1fr; }
-  .spec-row.wide { flex-direction: column; align-items: flex-start; }
+  .spec-table               { grid-template-columns: 1fr; }
+  .spec-row.wide            { flex-direction: column; align-items: flex-start; }
 }
 
-/* ── Feature list (icon + title + one-line desc) ───── */
+/* ── Feature list (icon + title + desc) ─────────────── */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -325,7 +339,7 @@
   text-decoration: none;
   transition: border-color var(--transition-base), color var(--transition-base);
 }
-.download-chip:hover { border-color: var(--cyan); color: var(--cyan); }
+.download-chip:hover      { border-color: var(--cyan); color: var(--cyan); }
 .download-chip svg {
   width: 16px; height: 16px;
   stroke: currentColor; fill: none; stroke-width: 1.5;
@@ -355,46 +369,18 @@
 }
 .related-chip:hover { border-color: var(--cyan); color: var(--cyan); }
 
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVE — OVERVIEW PAGE
+   ════════════════════════════════════════════════════════ */
+
+/* Single-column at tablet and below */
 @media (max-width: 1024px) {
   .product-grid { grid-template-columns: 1fr; }
 }
 
-/* ==========================================================
-   INDIVIDUAL PRODUCT CARD IMAGE SETTINGS
-   ========================================================== */
-
-/* ==========================================================
-   INDIVIDUAL PRODUCT CARD IMAGE SETTINGS
-   ========================================================== 
-
-Artificial Intelligence 
-.ai-image{
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  display: block;
+/* Tighten body padding on small screens */
+@media (max-width: 640px) {
+  .product-card-body { padding: 20px 20px 24px; }
+  .product-card-name { font-size: 17px; }
 }
-
-/* UAV Systems 
-.uav-image{
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Software Systems 
-.software-image{
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Advanced Engineering 
-.engineering-image{
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  display: block;
-} */

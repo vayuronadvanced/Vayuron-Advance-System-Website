@@ -35,12 +35,9 @@
 </head>
 <body>
 
-  <!-- Skip to main content (accessibility) -->
   <a class="skip-to-content" href="#main-content">Skip to main content</a>
-
   <div id="cursor-dot" aria-hidden="true"></div>
 
-  <!-- Loading screen -->
   <div id="loading-screen" aria-hidden="true" role="status">
     <div class="loading-logo"><div class="loading-logo-mark"></div><span class="loading-logo-text">VAYU<em>RON</em></span></div>
     <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
@@ -48,11 +45,11 @@
   </div>
   <div id="navbar-root"></div>
 
+  <main id="main-content" style="display:contents">
+
   <!-- ═══════════════════════════════════════
        PAGE BANNER
        ═══════════════════════════════════════ -->
-  <main id="main-content" style="display:contents">
-
   <section class="page-banner" aria-label="Products Overview">
     <div class="page-banner-bg" aria-hidden="true"></div>
     <div class="page-banner-grid" aria-hidden="true"></div>
@@ -81,13 +78,12 @@
       <!-- UAV Systems -->
       <a class="product-card" href="/products/uav-systems.html">
         <div class="product-card-media">
-            <img
-              class="uav-image"
-              src="/assets/images/products/uav-systems.png"
-              alt="Vayuron UAV System"
-              loading="lazy"
-            />
-          </div>
+          <img
+            class="product-card-img"
+            src="/assets/images/products/uav-systems.png"
+            alt="Vayuron UAV System"
+            loading="lazy"
+          />
           <div class="product-card-tag">UAV Systems</div>
         </div>
         <div class="product-card-body">
@@ -104,11 +100,11 @@
         </div>
       </a>
 
-      <!-- Artificial Intelligence -->    
+      <!-- Artificial Intelligence -->
       <a class="product-card" href="/products/artificial-intelligence.html">
         <div class="product-card-media">
           <img
-            class="ai-image"
+            class="product-card-img"
             src="/assets/images/products/artificial-intelligence.jpg"
             alt="Artificial Intelligence Solutions"
             loading="lazy"
@@ -132,7 +128,7 @@
       <a class="product-card" href="/products/software-systems.html">
         <div class="product-card-media">
           <img
-            class="software-image"
+            class="product-card-img"
             src="/assets/images/products/Software-systems.jpg"
             alt="Software Systems Platform"
             loading="lazy"
@@ -156,7 +152,7 @@
       <a class="product-card" href="/products/advanced-engineering.html">
         <div class="product-card-media">
           <img
-            class="engineering-image"
+            class="product-card-img"
             src="/assets/images/products/Advanced-Engineering.jpg"
             alt="Advanced Engineering Solutions"
             loading="lazy"
@@ -180,8 +176,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════
-       SECTORS QUICK-ACCESS (anchor target for
-       navbar "Sectors" mega-menu link)
+       SECTORS QUICK-ACCESS
        ═══════════════════════════════════════ -->
   <section class="page-section alt" aria-label="Sectors" id="sectors">
     <div id="sectors-anchor"></div>
@@ -292,7 +287,6 @@
   <script src="/js/smooth-scroll.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/animations.js"></script>
-
   <script src="/js/performance.js"></script>
   <script src="/js/seo.js"></script>
 </body>
