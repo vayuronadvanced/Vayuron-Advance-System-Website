@@ -25,7 +25,7 @@ window.VAYURON_CONFIG = {
     phone:      '07554 582 442',
     phoneTel:   'tel:+910755458244',        // for href="tel:..."
     emailHref:  'mailto:info@vayuronadvancedsystems.com',
-    address:    'Advanced Technology Centre, India',
+    address:    '47, Balaji Nagar, Ayodhya Nagar, Bhopal, Madhya Pradesh 462023',
     vendor:     'DRDO / MoD Registered Vendor',
   },
 

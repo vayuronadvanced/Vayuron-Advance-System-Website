@@ -28,8 +28,8 @@ const SITE = {
     region:   'India',
   },
   sameAs: [
-    'PASTE_LINKEDIN_LINK_HERE',
-    'PASTE_INSTAGRAM_LINK_HERE',
+    'https://www.linkedin.com/company/vaayu-robotics/E',
+    'https://www.instagram.com/vayuron.advanced.systms?igsh=MWF4ZWRzdW53cWd0Nw==',
   ],
   description: 'Indigenous UAV systems, artificial intelligence, software platforms, and advanced engineering for defence, government, and industrial applications.',
 };
