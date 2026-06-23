@@ -32,7 +32,8 @@
 /* Media area — image or video thumbnail */
 .product-card-media {
   position: relative;
-  aspect-ratio: 16/9;
+  width: 100%;
+  height: 380px;   /* same size for all 4 cards */
   overflow: hidden;
   background: var(--surface2);
   border-bottom: 1px solid var(--border);
@@ -357,3 +358,43 @@
 @media (max-width: 1024px) {
   .product-grid { grid-template-columns: 1fr; }
 }
+
+/* ==========================================================
+   INDIVIDUAL PRODUCT CARD IMAGE SETTINGS
+   ========================================================== */
+
+/* ==========================================================
+   INDIVIDUAL PRODUCT CARD IMAGE SETTINGS
+   ========================================================== 
+
+Artificial Intelligence 
+.ai-image{
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+/* UAV Systems 
+.uav-image{
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Software Systems 
+.software-image{
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Advanced Engineering 
+.engineering-image{
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+} */
